@@ -5,6 +5,21 @@ July 27, 2017
 
 My dotfiles repo.
 
+Bootstrapping
+-------------
+
+Stow 2.3.0 is included in this repo for bootstrapping purposes.
+To stow stow after cloning this repository to `$HOME/.dotfiles`, run
+
+.bash
+----------------------------------------------
+PERL5LIB=$HOME/.dotfiles/stow/stow/lib/perl5 \
+  $HOME/.dotfiles/stow/stow/bin/stow \
+  -d $HOME/.dotfiles/stow \
+  -t /home/glasbren/.local \
+  stow
+----------------------------------------------
+
 License
 -------
 
