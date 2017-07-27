@@ -1,0 +1,155 @@
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+umask 0022
+
+# Function for editing PATH environmental variable
+# Adapted from https://unix.stackexchange.com/a/217629
+pathmunge () {
+  if ! echo "$PATH" | /bin/grep -Eq "(^|:)$1($|:)" ; then
+    if [ "$2" = "after" ] ; then
+      PATH="${PATH}:$1"
+    else
+      PATH="$1${PATH:+:${PATH}}"
+    fi
+  fi
+}
+
+# Check if reboot is needed
+if [ -f /var/run/reboot-required ]; then
+  echo 'reboot required'
+fi
+
+# Set aliases
+alias ee="$HOME/.local/bin/emacsclient.sh"
+alias tmux='direnv exec / tmux'
+
+# Set vi mode for bash
+set -o vi
+
+# Set VISUAL and EDITOR
+export EDITOR='vi'
+
+# Start tmux by default                                                                                                                                                       
+# if command -v tmux>/dev/null; then
+#   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux new-session -A -s main
+# fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.gem/ruby/2.3.0/bin" ] ; then
+    pathmunge ${HOME}/.gem/ruby/2.3.0/bin
+fi
+if [ -d "$HOME/bin" ] ; then
+    pathmunge ${HOME}/bin
+fi
+# if [ -d "$HOME/.miniconda3/envs/py3/bin" ] ; then
+#     pathmunge $HOME/.miniconda3/envs/py3/bin
+# fi
+if [ -d "$HOME/.local/bin" ] ; then
+    pathmunge ${HOME}/.local/bin
+fi
+
+# Function for activating pyenv
+# Loosely based on https://unix.stackexchange.com/a/217629
+pyenv-activate () {
+  if ! echo "$PATH" | /bin/grep -Eq "(^|:)${HOME}/.pyenv/shims($|:)" ; then
+    eval "$(pyenv init -)"
+    # Running `eval "$(pyenv init -)" also adds the function
+    # pyenv into the bash environment. Use `export -f`
+    # to put it in the global environment so it can be passed to subshells
+    # and to tmux sessions.
+    export -f pyenv
+  fi
+  if ! echo "$PATH" | /bin/grep -Eq "(^|:)${HOME}/.pyenv/plugins/pyenv-virtualenv/shims($|:)" ; then
+    eval "$(pyenv virtualenv-init -)"
+    # Running `eval "$(pyenv virtualenv-init -)"` also adds the function
+    # _pyenv_virtualenv_hook into the bash environment. Use `export -f`
+    # to put it in the global environment so it can be passed to subshells
+    # and to tmux sessions.
+    export -f _pyenv_virtualenv_hook
+  fi
+}
+
+# Remove conda virtualenv prefixes for command prompt
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
+# Pyenv setup
+if [ -d "$HOME/.pyenv/bin" ] ; then
+    pathmunge ${HOME}/.pyenv/bin
+    pyenv-activate
+fi
+
+# Function to show virtual environment when desired
+case "$TERM" in
+eterm*)
+    export PS1_INIT='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    ;;
+*)
+    if [ -z ${PS1_INIT:+x} ]; then
+        export PS1_INIT=`echo "${PS1}"`
+    fi
+    ;;
+esac
+
+show_virtual_env() {
+  if [[ -n ${CONDA_DEFAULT_ENV} && ${CONDA_DEFAULT_ENV} == root ]]; then
+    if [[ -z ${PYENV_VERSION} ]]; then
+      echo ""
+    elif [[ -n ${PYENV_VERSION} ]]; then
+      echo "($(basename $PYENV_VERSION)) "
+    fi
+  elif [[ -n ${CONDA_DEFAULT_ENV} && ${CONDA_DEFAULT_ENV} != root ]]; then
+    echo "($(basename ${CONDA_DEFAULT_ENV})) "
+  elif [[ -z ${CONDA_DEFAULT_ENV} && -n ${CONDA_PREFIX} ]]; then
+    if [[ -n ${PYENV_VERSION} ]]; then
+      echo "($(basename $PYENV_VERSION)) "
+    elif [[ -z ${PYENV_VERSION} ]]; then
+      echo "($(basename $CONDA_PREFIX)) "
+    fi
+  elif [[ -z ${CONDA_DEFAULT_ENV} && -z ${CONDA_PREFIX} && -n ${PYENV_VERSION} ]]; then
+    echo "($(basename $PYENV_VERSION)) "
+  elif [[ -z ${CONDA_DEFAULT_ENV} && -z ${CONDA_PREFIX} && -z ${PYENV_VERSION} ]]; then
+    if [[ -n ${VIRTUAL_ENV} ]]; then
+      echo "($(basename $VIRTUAL_ENV)) "
+    fi
+  else
+    echo ""
+  fi
+}
+
+# Show Virtual Environment
+PS1='$(show_virtual_env)'${PS1_INIT}
+
+# Start the gpg-agent if not already running
+if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+  gpg-connect-agent /bye >/dev/null 2>&1
+fi
+
+# Set SSH to use gpg-agent
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+fi
+
+# Set GPG TTY
+export GPG_TTY=$(tty)
+
+# Refresh gpg-agent tty in case user switches into an X session
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
+# Ansible variables
+if [ -f "$HOME/.local/etc/ansible/ansible.cfg" ]; then
+    export ANSIBLE_CONFIG="$HOME/.local/etc/ansible/ansible.cfg"
+    export ANSIBLE_HOME="`dirname ${ANSIBLE_CONFIG}`"
+fi
+
+# Disable terminal scroll lock with C-s
+stty -ixon
+
+# Perl5
+if [[ -d $HOME/.local/lib/perl5 ]]; then
+  export PERL5LIB="${HOME}/.local/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+  export PERL_LOCAL_LIB_ROOT="${HOME}/.local${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+  export PERL_MB_OPT="--install_base \"${HOME}/.local\""
+  export PERL_MM_OPT="INSTALL_BASE=${HOME}/.local"
+fi
+
