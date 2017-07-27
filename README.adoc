@@ -2,6 +2,7 @@ James Glasbrenner's dotfiles
 ============================
 James Glasbrenner <jglasbr2@gmu.edu>
 July 27, 2017
+:source-highlighter: rouge
 
 My dotfiles repo.
 
@@ -11,7 +12,7 @@ Bootstrapping
 Stow 2.3.0 is included in this repo for bootstrapping purposes.
 To stow stow after cloning this repository to `$HOME/.dotfiles`, run
 
-[source,bash]
+[source,sh]
 ----------------------------------------------
 PERL5LIB=$HOME/.dotfiles/stow/stow/lib/perl5 \
   $HOME/.dotfiles/stow/stow/bin/stow \
