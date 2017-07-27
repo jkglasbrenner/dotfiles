@@ -1,0 +1,11 @@
+James Glasbrenner's dotfiles
+============================
+James Glasbrenner <jglasbr2@gmu.edu>
+July 27, 2017
+
+My dotfiles repo.
+
+License
+-------
+
+All content is licensed under the terms of link:LICENSE[The Unlicense License].
