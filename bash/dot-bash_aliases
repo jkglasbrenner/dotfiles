@@ -47,6 +47,9 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     pathmunge ${HOME}/.local/bin
 fi
+if [ -d "$HOME/.local/scripts" ] ; then
+    pathmunge ${HOME}/.local/scripts
+fi
 
 # Function for activating pyenv
 # Loosely based on https://unix.stackexchange.com/a/217629
