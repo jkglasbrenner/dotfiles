@@ -17,7 +17,7 @@ To stow stow after cloning this repository to `$HOME/.dotfiles`, run
 PERL5LIB=$HOME/.dotfiles/stow/stow/lib/perl5 \
   $HOME/.dotfiles/stow/stow/bin/stow \
   -d $HOME/.dotfiles/stow \
-  -t /home/glasbren/.local \
+  -t $HOME/.local \
   stow
 ----------------------------------------------
 
