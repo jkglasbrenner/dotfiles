@@ -20,7 +20,7 @@ if [[ -f /var/run/reboot-required ]]; then
 fi
 
 # Set aliases
-alias ee="${HOME}/.local/bin/emacsclient.sh"
+alias ee="emacsclient.sh"
 alias tmux='direnv exec / tmux'
 
 # Set vi mode for bash
