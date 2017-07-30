@@ -6,7 +6,7 @@
 # new window retains current path, possible values are:
 #   - true
 #   - false (default)
-tmux_conf_new_window_retain_current_path=false
+tmux_conf_new_window_retain_current_path=true
 
 # new pane retains current path, possible values are:
 #   - true (default)
@@ -219,7 +219,7 @@ tmux_conf_theme_clock_style='24'
 # ------------------------------------------------------------------------------
 # this is the place to override or undo settings
 
-# Terminal                                                                                                                                                                                                                                                                                
+# Terminal
 set -g default-terminal "screen-256color"
 set-option -ga terminal-overrides ",256col:Tc"
 
