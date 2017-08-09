@@ -1,4 +1,6 @@
-changeps1: false
 channels:
   - defaults
   - matsci
+show_channel_urls: true
+changeps1: false
+ssl_verify: true
