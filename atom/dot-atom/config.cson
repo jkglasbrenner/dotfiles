@@ -1,0 +1,99 @@
+"*":
+  Hydrogen:
+    languageMappings: '''
+      {
+          "Pweave markdown": "Python 3",
+          "python": "magicpython"
+      }
+    '''
+    startDir: "projectDirOfFile"
+    startupCode: "{\"Python 3\": \"%matplotlib inline\\n%config InlineBackend.figure_format = 'svg'"}"
+  "atom-beautify":
+    bash:
+      beautify_on_save: true
+      indent_size: 2
+    general:
+      beautifyEntireFileOnSave: false
+    markdown:
+      beautify_on_save: true
+      commonmark: true
+      default_beautifier: "Remark"
+    python:
+      sort_imports: true
+    r:
+      beautify_on_save: true
+      indent_size: 2
+    yaml:
+      disabled: true
+  "autocomplete-python":
+    useKite: false
+  core:
+    disabledPackages: [
+      "language-gfm"
+      "language-python"
+    ]
+    packagesWithKeymapsDisabled: []
+    telemetryConsent: "no"
+    themes: [
+      "zenburn-ui"
+      "zenburn"
+    ]
+  editor:
+    fontFamily: "Hack"
+    preferredLineLength: 79
+    showIndentGuide: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "a9970b71-c592-4094-a1ca-5774c7ea9f09"
+  "linter-ui-default": {}
+  "markdown-preview-plus":
+    grammars: [
+      "source.gfm"
+      "source.litcoffee"
+      "source.pweave.md"
+      "text.html.basic"
+      "text.md"
+      "text.plain"
+      "text.plain.null-grammar"
+    ]
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      linter: true
+      linterDecorationsZIndex: 0
+      pigments: true
+      pigmentsDecorationsZIndex: 0
+  welcome:
+    showOnStartup: false
+".basic.html.text":
+  editor:
+    tabLength: 2
+".latex.pweave.source":
+  editor:
+    preferredLineLength: 79
+".latex.source.weave":
+  editor:
+    preferredLineLength: 79
+".md.pweave.source":
+  editor:
+    preferredLineLength: 79
+    tabLength: 4
+  "expand-region":
+    commands: [
+      {
+        command: "expand-region:select-inside-back-ticks"
+        recursive: true
+      }
+    ]
+".md.source.weave":
+  editor:
+    preferredLineLength: 79
+".md.text":
+  editor:
+    preferredLineLength: 79
+    scrollPastEnd: false
+".pweave.restructuredtext.source":
+  editor:
+    preferredLineLength: 79
+    tabLength: 4
