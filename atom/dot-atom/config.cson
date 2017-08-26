@@ -7,7 +7,7 @@
       }
     '''
     startDir: "projectDirOfFile"
-    startupCode: "{\"Python 3\": \"%matplotlib inline\\n%config InlineBackend.figure_format = 'svg'"}"
+    startupCode: "{\"Python 3\": \"%matplotlib inline\\n%config InlineBackend.figure_format = 'svg'\"}"
   "atom-beautify":
     bash:
       beautify_on_save: true
