@@ -49,6 +49,9 @@ if [[ -d /usr/local/cuda-8.0/bin ]]; then
     pathmunge /usr/local/cuda-8.0/bin
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64/${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 fi
+if [[ -d ${HOME}/.local/texlive/2017/bin/x86_64-linux ]]; then
+    pathmunge ${HOME}/.local/texlive/2017/bin/x86_64-linux
+fi
 
 # Function for activating pyenv
 # Loosely based on https://unix.stackexchange.com/a/217629
