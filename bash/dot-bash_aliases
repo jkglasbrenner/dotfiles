@@ -22,6 +22,7 @@ fi
 # Set aliases
 alias ee="emacsclient.sh"
 alias tmux='direnv exec / tmux'
+alias bfg='java -jar bfg.jar'
 
 # Set vi mode for bash
 set -o vi
