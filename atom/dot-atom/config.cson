@@ -20,6 +20,8 @@
       commonmark: true
       default_beautifier: "Remark"
     python:
+      default_beautifier: "yapf"
+      formater: "yapf"
       sort_imports: true
     r:
       beautify_on_save: true
@@ -28,12 +30,12 @@
       disabled: true
   "atom-clock":
     showClockIcon: true
-  "autocomplete-python":
-    useKite: false
   "atom-html-preview":
     enableMathJax: true
     scrollToCursor: true
     triggerOnSave: true
+  "autocomplete-python":
+    useKite: false
   build:
     saveOnBuild: true
     scrollOnError: true
@@ -43,6 +45,8 @@
     disabledPackages: [
       "language-gfm"
       "language-python"
+      "atom-ide-ui"
+      "ide-python"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
