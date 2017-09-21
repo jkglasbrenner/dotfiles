@@ -1,5 +1,6 @@
 "*":
   Hydrogen:
+    kernelspec: "{}"
     languageMappings: '''
       {
           "Pweave markdown": "Python 3",
@@ -7,7 +8,7 @@
       }
     '''
     startDir: "projectDirOfFile"
-    startupCode: "{\"Python 3\": \"%matplotlib inline\\n%config InlineBackend.figure_format = 'svg'\"}"
+    startupCode: "{\"Python 3\": \"%matplotlib inline\"}"
   "atom-beautify":
     bash:
       beautify_on_save: true
@@ -25,8 +26,19 @@
       indent_size: 2
     yaml:
       disabled: true
+  "atom-clock":
+    showClockIcon: true
   "autocomplete-python":
     useKite: false
+  "atom-html-preview":
+    enableMathJax: true
+    scrollToCursor: true
+    triggerOnSave: true
+  build:
+    saveOnBuild: true
+    scrollOnError: true
+  "build-make":
+    jobs: 1
   core:
     disabledPackages: [
       "language-gfm"
@@ -47,6 +59,7 @@
     userId: "a9970b71-c592-4094-a1ca-5774c7ea9f09"
   "linter-ui-default": {}
   "markdown-preview-plus":
+    enablePandoc: true
     grammars: [
       "source.gfm"
       "source.litcoffee"
@@ -56,6 +69,15 @@
       "text.plain"
       "text.plain.null-grammar"
     ]
+    pandocArguments: [
+      "--mathjax"
+      "--smart"
+      "--no-highlight"
+    ]
+    pandocBibliography: true
+    pandocMarkdownFlavor: "markdown+tex_math_single_backslash+multiline_tables+autolink_bare_uris+ascii_identifiers-implicit_figures"
+    useLazyHeaders: false
+    useNativePandocCodeStyles: true
   minimap:
     plugins:
       "highlight-selected": true
@@ -64,6 +86,11 @@
       linterDecorationsZIndex: 0
       pigments: true
       pigmentsDecorationsZIndex: 0
+  "platformio-ide-terminal":
+    core:
+      scrollback: 8000
+    style:
+      fontFamily: "Hack"
   welcome:
     showOnStartup: false
 ".basic.html.text":
