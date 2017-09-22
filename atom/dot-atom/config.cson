@@ -64,7 +64,15 @@
     tabLength: 4
   "exception-reporting":
     userId: "a9970b71-c592-4094-a1ca-5774c7ea9f09"
-  "linter-ui-default": {}
+  "linter-markdown":
+    scopes: [
+      "source.gfm"
+      "source.pfm"
+      "source.pweave.md"
+      "text.md"
+    ]
+  "linter-ui-default":
+    showPanel: true
   "markdown-preview-plus":
     enablePandoc: true
     grammars: [
@@ -126,7 +134,7 @@
 ".md.text":
   editor:
     preferredLineLength: 79
-    scrollPastEnd: false
+    scrollPastEnd: true
 ".pweave.restructuredtext.source":
   editor:
     preferredLineLength: 79
