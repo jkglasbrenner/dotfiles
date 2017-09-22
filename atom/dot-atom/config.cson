@@ -34,6 +34,9 @@
     enableMathJax: true
     scrollToCursor: true
     triggerOnSave: true
+  "atom-ide-ui":
+    use:
+      "atom-ide-diagnostics-ui": false
   "autocomplete-python":
     useKite: false
   build:
