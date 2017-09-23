@@ -33,4 +33,195 @@
 
 # Disable Enter key for confirming an autocomplete suggestion
 'atom-text-editor:not(mini).autocomplete-active':
-  'enter': 'editor:newline'
+    'enter': 'editor:newline'
+
+'.editor':
+    'ctrl-alt-b': 'atom-beautify:beautify-editor'
+    'ctrl-alt-g': 'fuzzy-grep:toggle'
+
+'body atom-text-editor.autocomplete-active':
+    'ctrl-p': 'autocomplete-plus:move-up'
+    'ctrl-n': 'autocomplete-plus:move-down'
+
+'atom-workspace:not([mini])':
+    'ctrl-shift-left': 'window:move-active-item-to-pane-on-left'
+    'ctrl-shift-right': 'window:move-active-item-to-pane-on-right'
+    'ctrl-shift-up': 'window:move-active-item-to-pane-above'
+    'ctrl-shift-down': 'window:move-active-item-to-pane-below'
+
+    'alt-x': 'vim-mode-plus:exchange-pane'
+    'alt-K': 'vim-mode-plus:move-pane-to-very-top'
+    'alt-J': 'vim-mode-plus:move-pane-to-very-bottom'
+    'alt-H': 'vim-mode-plus:move-pane-to-very-left'
+    'alt-L': 'vim-mode-plus:move-pane-to-very-right'
+
+    'alt-2': 'paner:split-pane-down-stay'
+    'alt-3': 'paner:split-pane-right-stay'
+
+    'ctrl-[': 'core:cancel'
+    'ctrl-g': 'core:cancel'
+
+    'ctrl-alt-e i': 'application:open-your-init-script'
+    'ctrl-alt-e c': 'application:open-your-config'
+    'ctrl-alt-e k': 'application:open-your-keymap'
+    'ctrl-alt-e s': 'application:open-your-stylesheet'
+    'ctrl-alt-e n': 'application:open-your-snippets'
+    'ctrl-alt-e p': 'project-folder:open-config'
+
+    'ctrl-i': 'cursor-history:next'
+    'ctrl-o': 'cursor-history:prev'
+    'ctrl-alt-i': 'cursor-history:next-within-editor'
+    'ctrl-alt-o': 'cursor-history:prev-within-editor'
+
+'atom-text-editor':
+    'shift-alt-enter': 'vim-mode-plus:maximize-pane-without-center'
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+    'Q': 'vim-mode-plus:move-to-previous-subword'
+    'q': 'vim-mode-plus:move-to-next-subword'
+
+    'space T': 'narrow:fold'
+
+    'space o': 'narrow:symbols-by-current-word'
+    'space O': 'narrow:project-symbols-by-current-word'
+
+    'space r': 'narrow:symbols'
+    'space R': 'narrow:project-symbols'
+
+    'space l': 'narrow:scan'
+    'alt-l': 'narrow:scan-by-current-word'
+
+    'space s': 'narrow:search'
+    'ctrl-p': 'narrow:git-ls'
+    'space C': 'narrow:linter'
+
+    'space a': 'narrow:atom-scan'
+    'space A': 'narrow:atom-scan-by-current-word'
+    'space G': 'narrow:git-diff-all'
+
+    'g .': 'vim-mode-plus:add-preset-occurrence-from-last-occurrence-pattern'
+
+    'ctrl-/': 'vim-mode-plus:toggle-line-comments'
+
+    'space i': 'vim-mode-plus:insert-at-head-of-target'
+    'g i': 'vim-mode-plus:insert-at-start-of-target'
+    'g a': 'vim-mode-plus:insert-at-end-of-target'
+
+    'g d': 'vim-mode-plus:select-occurrence'
+
+    'g m': 'vim-mode-plus:mark'
+    'g M': 'vim-mode-plus:clear-persistent-selection'
+
+    'g enter': 'vim-mode-plus:create-persistent-selection'
+    'space enter': 'vim-mode-plus:clear-persistent-selection'
+
+    'g h': 'vim-mode-plus-user:quick-highlight'
+    'w': 'vim-mode-plus:move-to-next-smart-word'
+    'b': 'vim-mode-plus:move-to-previous-smart-word'
+    'e': 'vim-mode-plus:move-to-end-of-smart-word'
+
+    'g P': 'vim-mode-plus:put-before-with-auto-indent'
+    'g p': 'vim-mode-plus:put-after-with-auto-indent'
+
+    'g _': 'vim-mode-plus:snake-case'
+    'g %': 'vim-mode-plus:encode-uri-component'
+
+    'space p': 'vim-mode-plus:move-to-previous-fold-start-with-same-indent'
+    'space n': 'vim-mode-plus:move-to-next-fold-start-with-same-indent'
+    'g >': 'vim-mode-plus:rotate-arguments-of-inner-pair'
+    'g <': 'vim-mode-plus:rotate-arguments-backwards-of-inner-pair'
+
+    'space f f': 'fuzzy-finder:toggle-file-finder'
+    'space f g': 'fuzzy-grep:toggle'
+
+'atom-text-editor.vim-mode-plus.normal-mode':
+    'enter': 'narrow:search-by-current-word'
+
+    "g '": 'vim-mode-plus:move-to-next-string'
+
+    'space w k': 'window:focus-pane-above'
+    'space w j': 'window:focus-pane-below'
+    'space w h': 'window:focus-pane-on-left'
+    'space w l': 'window:focus-pane-on-right'
+    'space w w': 'window:focus-next-pane'
+    'space w p': 'window:focus-previous-pane'
+    'space w v': 'pane:split-right-and-copy-active-item'
+    'space w s': 'pane:split-down-and-copy-active-item'
+
+    'space g o': 'open-on-github:file'
+    'space g b': 'open-on-github:blame'
+    'space g h': 'open-on-github:history'
+    'space g i': 'open-on-github:issues'
+    'space g c': 'open-on-github:copy-url'
+    'space g r': 'open-on-github:branch-compare'
+    'space g g': 'open-on-github:repository'
+
+    'space g n': 'git-diff:move-to-next-diff'
+    'space g p': 'git-diff:move-to-previous-diff'
+    'space g d': 'git-diff:toggle-diff-list'
+
+    '_': 'toggle:there'
+
+    'space t f': 'vim-mode-plus:toggle-fold'
+    'space t i': 'user:toggle-show-invisible'
+    'space t I': 'editor:toggle-indent-guide'
+    'space t w': 'editor:toggle-soft-wrap'
+    'space t n': 'editor:toggle-line-numbers'
+
+    'S': 'vim-mode-plus:surround-smart-word'
+    's': 'vim-mode-plus:surround-smart-word'
+
+    'space j': 'jumpy:toggle'
+
+    'g f': 'open-this:here'
+    'ctrl-w f': 'open-this:split-down'
+    'ctrl-w F': 'open-this:split-right'
+
+    'space /': 'vim-mode-plus:clear-highlight-search'
+    'g x': 'link:open'
+
+'atom-text-editor.vim-mode-plus.insert-mode':
+    'ctrl-p': 'core:move-up'
+    'ctrl-n': 'core:move-down'
+    'j k': 'vim-mode-plus:activate-normal-mode' # jk to escape
+
+    'space tab': 'autocomplete-plus:activate'
+
+    'alt-e': 'editor:move-to-end-of-word'
+    'alt-b': 'editor:move-to-beginning-of-word'
+    'alt-d': 'editor:delete-to-end-of-word'
+
+    'alt-F': 'core:move-right'
+    'alt-B': 'core:move-left'
+
+    'ctrl-alt-f': 'vim-mode-plus:move-to-next-subword'
+    'ctrl-alt-b': 'vim-mode-plus:move-to-previous-subword'
+    'ctrl-alt-d': 'editor:delete-to-end-of-subword'
+    'ctrl-alt-w': 'editor:delete-to-beginning-of-subword'
+
+    'ctrl-y': 'clip-history:paste'
+    'alt-y': 'clip-history:paste-newer'
+    'ctrl-Y': 'clip-history:paste-last'
+    'ctrl-.': 'vim-mode-plus:insert-last-inserted'
+    'ctrl-{': 'vim-mode-plus:move-to-previous-fold-start'
+    'ctrl-}': 'vim-mode-plus:move-to-next-fold-start'
+
+'atom-text-editor.vim-mode-plus.visual-mode':
+
+    'ctrl-t': 'vim-mode-plus-user:move-selected-text-toggle-overwrite'
+    'ctrl-k': 'vim-mode-plus-user:move-selected-text-up'
+    'ctrl-j': 'vim-mode-plus-user:move-selected-text-down'
+    'ctrl-h': 'vim-mode-plus-user:move-selected-text-left'
+    'ctrl-l': 'vim-mode-plus-user:move-selected-text-right'
+
+    'alt-K': 'vim-mode-plus-user:duplicate-selected-text-up'
+    'alt-J': 'vim-mode-plus-user:duplicate-selected-text-down'
+    'alt-H': 'vim-mode-plus-user:duplicate-selected-text-left'
+    'alt-L': 'vim-mode-plus-user:duplicate-selected-text-right'
+
+    'T': 'try:paste'
+    'alt-/': 'vim-mode-plus:toggle-line-comments'
+    'alt-c': 'vim-mode-plus:yank'
+
+'atom-text-editor.vim-mode-plus.insert-mode.autocomplete-active':
+    'ctrl-g': 'autocomplete-plus:cancel'
