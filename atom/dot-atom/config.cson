@@ -47,6 +47,8 @@
   "atom-ide-ui":
     use:
       "atom-ide-diagnostics-ui": false
+  "atom-package-sync":
+    syncSettings: false
   "autocomplete-python":
     useKite: false
   build:
@@ -67,12 +69,13 @@
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
     themes: [
-      "zenburn-ui"
-      "zenburn"
+      "one-light-ui"
+      "one-light-syntax"
     ]
   editor:
     fontFamily: "Hack"
     preferredLineLength: 79
+    scrollPastEnd: true
     showIndentGuide: true
     tabLength: 4
   "exception-reporting":
