@@ -9,10 +9,16 @@
     '''
     startDir: "projectDirOfFile"
     startupCode: "{\"Python 3\": \"%matplotlib inline\"}"
+  "advanced-open-file":
+    createDirectories: true
+    fuzzyMatch: true
   "atom-beautify":
     bash:
       beautify_on_save: true
       indent_size: 2
+    executables:
+      isort:
+        path: "/usr/bin/env isort"
     general:
       beautifyEntireFileOnSave: false
     markdown:
@@ -20,9 +26,11 @@
       commonmark: true
       default_beautifier: "Remark"
     python:
-      default_beautifier: "yapf"
+      beautify_on_save: true
+      default_beautifier: "pybeautifier"
       formater: "yapf"
       sort_imports: true
+      style_config: "{based_on_style: pep8, align_closing_bracket_with_visual_indent: false, blank_line_before_nested_class_or_def: true, indent_width: 4, join_multiple_lines: false, split_before_named_assigns: false}"
     r:
       beautify_on_save: true
       indent_size: 2
@@ -30,6 +38,8 @@
       disabled: true
   "atom-clock":
     showClockIcon: true
+  "atom-fuzzy-grep":
+    detectGitProjectAndUseGitGrep: false
   "atom-html-preview":
     enableMathJax: true
     scrollToCursor: true
@@ -44,12 +54,15 @@
     scrollOnError: true
   "build-make":
     jobs: 1
+  "code-peek": {}
   core:
     disabledPackages: [
       "language-gfm"
       "language-python"
       "atom-ide-ui"
       "ide-python"
+      "linter-pylint"
+      "linter-flake8"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
@@ -71,8 +84,12 @@
       "source.pweave.md"
       "text.md"
     ]
-  "linter-ui-default":
-    showPanel: true
+  "linter-pylama":
+    executablePath: "~/.pyenv/shims/pylama, pylama, pylama.exe"
+    interpreter: "~/.pyenv/shims/python, python, python.exe"
+    pylamaVersion: "external"
+    usePylint: true
+  "linter-ui-default": {}
   "markdown-preview-plus":
     enablePandoc: true
     grammars: [
@@ -106,6 +123,7 @@
       scrollback: 8000
     style:
       fontFamily: "Hack"
+  "status-bar": {}
   welcome:
     showOnStartup: false
 ".basic.html.text":
