@@ -96,7 +96,8 @@
     interpreter: "~/.pyenv/shims/python, python, python.exe"
     pylamaVersion: "external"
     usePylint: true
-  "linter-ui-default": {}
+  "linter-ui-default":
+    decorateOnTreeView: "Files and Directories"
   "markdown-preview-plus":
     enablePandoc: true
     grammars: [
