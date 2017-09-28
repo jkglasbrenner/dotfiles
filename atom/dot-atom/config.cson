@@ -49,6 +49,8 @@
       "atom-ide-diagnostics-ui": false
   "atom-package-sync":
     syncSettings: false
+  "atomic-rtags":
+    rdmAutoSpawn: true
   "auto-update-plus":
     excludedPackages: [
       "code-peek"
@@ -131,6 +133,11 @@
       scrollback: 8000
     style:
       fontFamily: "Hack"
+  "project-manager":
+    environmentSpecificProjects: true
+    includeGitRepositories: true
+    savePathsRelativeToHome: true
+    sortBy: "group"
   "status-bar": {}
   welcome:
     showOnStartup: false
