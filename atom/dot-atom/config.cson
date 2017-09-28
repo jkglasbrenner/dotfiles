@@ -49,6 +49,10 @@
       "atom-ide-diagnostics-ui": false
   "atom-package-sync":
     syncSettings: false
+  "auto-update-plus":
+    excludedPackages: [
+      "code-peek"
+    ]
   "autocomplete-python":
     useKite: false
   build:
