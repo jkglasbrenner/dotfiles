@@ -128,16 +128,26 @@
       linterDecorationsZIndex: 0
       pigments: true
       pigmentsDecorationsZIndex: 0
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   "platformio-ide-terminal":
     core:
       scrollback: 8000
     style:
       fontFamily: "Hack"
   "project-manager":
+    alwaysOpenInSameWindow: true
     environmentSpecificProjects: true
     includeGitRepositories: true
     savePathsRelativeToHome: true
     sortBy: "group"
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
   "status-bar": {}
   welcome:
     showOnStartup: false
