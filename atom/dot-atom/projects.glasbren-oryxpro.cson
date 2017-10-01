@@ -1,5 +1,12 @@
 [
   {
+    title: "CDS-411 Instructors"
+    group: "CDS-411"
+    paths: [
+      "~/Courses/CDS-411/instructors"
+    ]
+  }
+  {
     title: "Spyns"
     group: "Development"
     paths: [
@@ -7,8 +14,8 @@
     ]
   }
   {
-    title: "CSI-702: Homework02 Instructor Attempt"
-    group: "Mason Fall 2017"
+    title: "CSI-702 Spr17: Homework02 Instructor Attempt"
+    group: "CSI-702"
     paths: [
       "~/Documents/work/teaching/2017_Spring_Semester/CSI-702_High_Performance_Computing/assignments/homework02-instructor-attempt"
     ]
