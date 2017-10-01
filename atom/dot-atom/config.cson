@@ -71,6 +71,7 @@
       "ide-python"
       "linter-pylint"
       "linter-flake8"
+      "markdown-preview-plus-opener"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
