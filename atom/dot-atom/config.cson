@@ -152,6 +152,7 @@
   "status-bar": {}
   welcome:
     showOnStartup: false
+  "zotero-citations": {}
 ".basic.html.text":
   editor:
     tabLength: 2
