@@ -1,0 +1,18 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Alignment",
+		"BracketHighlighter",
+		"Gist",
+		"Git",
+		"GitGutter",
+		"Markdown Preview",
+		"SideBarEnhancements",
+		"zenburn"
+	]
+}
