@@ -1,0 +1,4 @@
+{
+  "executable": "~/.pyenv/versions/miniconda3-latest/bin/python",
+  "environment_directory": "~/.pyenv/versions/miniconda3-latest/envs/",
+}
