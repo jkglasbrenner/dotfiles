@@ -1,0 +1,12 @@
+{
+      "yapf_command": "~/.pyenv/shims/yapf",
+      "config": {
+            "based_on_style": "pep8",
+            "ALIGN_CLOSING_BRACKET_WITH_VISUAL_INDENT": false,
+            "BLANK_LINE_BEFORE_NESTED_CLASS_OR_DEF": true,
+            "INDENT_WIDTH": 4,
+            "JOIN_MULTIPLE_LINES": false,
+            "SPLIT_BEFORE_NAMED_ASSIGNS": false,
+            "SPLIT_ARGUMENTS_WHEN_COMMA_TERMINATED": true
+      }
+}

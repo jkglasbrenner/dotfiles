@@ -1,18 +1,49 @@
 {
 	"auto_complete": false,
 	"auto_complete_commit_on_tab": true,
+	"auto_complete_delay": 500,
+	"auto_complete_triggers":
+	[
+		{
+			"characters": ".>:",
+			"selector": "text, source, meta, string, punctuation, constant"
+		},
+		{
+			"characters": ".",
+			"selector": "source.python - string - comment - constant.numeric"
+		}
+	],
 	"auto_match_enabled": true,
 	"bold_folder_labels": true,
 	"caret_style": "solid",
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/zenburn/zenburn.tmTheme",
-	"detect_indentation": true,
+	"detect_slow_plugins": false,
+	"detect_slow_pluginsdentation": false,
 	"draw_indent_guides": true,
+	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
-		"*.DS_Store",
 		"*.pyc",
-		"*.git"
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db"
 	],
 	"find_selected_text": true,
 	"fold_buttons": false,
@@ -26,6 +57,9 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"Git",
+		"Markdown",
+		"RestructuredText"
 	],
 	"indent_to_bracket": true,
 	"line_padding_bottom": 0,
@@ -51,11 +85,13 @@
 	"save_on_focus_lost": true,
 	"scroll_past_end": true,
 	"show_full_path": true,
-	"show_minimap": false,
-	"tab_completion": false,
+	"show_minimap": true,
+	"tab_completion": true,
 	"tab_size": 2,
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
+	"vintage_ctrl_keys": true,
 	"vintage_start_in_command_mode": true,
 	"wide_caret": true,
 	"word_wrap": true

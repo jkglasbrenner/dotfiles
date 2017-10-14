@@ -1,0 +1,23 @@
+{
+  "BasedOnStyle": "LLVM",
+  "Language": "Cpp",
+  "IncludeCategories": [
+    {
+      "Regex": "^<.*\\.h>",
+      "Priority": 1
+    },
+    {
+      "Regex": "^<.*",
+      "Priority": 2
+    },
+    {
+      "Regex": ".*",
+      "Priority": 3
+    }
+  ],
+"IndentCaseLabels": true,
+"SpacesBeforeTrailingComments": 2,
+"Standard": "Cpp11",
+"TabWidth": 4,
+"UseTab": "Never"
+}
