@@ -23,6 +23,7 @@
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": false,
 	"file_exclude_patterns":
 	[
 		"*.pyc",
@@ -46,7 +47,7 @@
 		"*.db"
 	],
 	"find_selected_text": true,
-	"fold_buttons": false,
+	"fold_buttons": true,
 	"folder_exclude_patterns":
 	[
 	],
