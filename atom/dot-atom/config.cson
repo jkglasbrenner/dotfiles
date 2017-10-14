@@ -75,10 +75,6 @@
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
-    themes: [
-      "one-light-ui"
-      "one-light-syntax"
-    ]
   editor:
     fontFamily: "Hack"
     preferredLineLength: 79
@@ -96,6 +92,7 @@
     ]
   "linter-pylama":
     executablePath: "~/.pyenv/shims/pylama, pylama, pylama.exe"
+    ignoreErrorsAndWarnings: "D203,D213,W0621"
     interpreter: "~/.pyenv/shims/python, python, python.exe"
     pylamaVersion: "external"
     usePylint: true
@@ -150,6 +147,9 @@
     rightEditorColor: "green"
     scrollSyncType: "Vertical + Horizontal"
   "status-bar": {}
+  "symbols-tree-view": {}
+  "vim-mode-plus":
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
   welcome:
     showOnStartup: false
   "zotero-citations": {}
