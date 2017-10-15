@@ -1,0 +1,64 @@
+#+TITLE: Emacs configuration file
+#+AUTHOR: James K. Glasbrenner
+#+BABEL: :cache yes
+#+PROPERTY: header-args :tangle yes
+
+* Overview
+
+** Links
+
+ - https://writequit.org/org/settings.html#sec-1
+ - https://github.com/seth/my-emacs-dot-d/blob/master/emacs-init.org
+ - https://github.com/wasamasa/dotemacs/blob/master/init.org
+ - https://github.com/larstvei/dot-emacs/blob/master/init.org
+ - http://pages.sachachua.com/.emacs.d/Sacha.html
+
+* First run
+
+We need to set up a bootstrapping procedure for the first time we tangle and source this file on a new installation.
+No matter how up-to-date our Emacs installation is, there will be a more recent version of =org-mode= available.
+We need to first install the newest version of =org-mode=, install any other prerequisities, and then we can move forward with the tangling procedure.
+Put the following in your =init.el= file to bootstrap the installation procedure:
+
+#+BEGIN_SRC emacs-lisp :tangle no
+;; Check version of Emacs
+(let ((minver 24))
+  (unless (>= emacs-major-version minver)
+    (error "Your Emacs is too old -- this config requires v%s or higher" minver)))
+;; No splash screen
+(setq inhibit-startup-message t)
+(require 'package)
+
+;; Set up package archives
+(cl-pushnew '("melpa" . "https://melpa.org/packages/") package-archives :test 'equal)
+(cl-pushnew '("melpa" . "https://melpa.org/packages/") package-archives :test 'equal)
+(cl-pushnew '("melpa-stable" . "https://stable.melpa.org/packages/") package-archives :test 'equal)
+(cl-pushnew '("org" . "http://orgmode.org/elpa/") package-archives :test 'equal)
+(cl-pushnew '("elpy" . "http://jorgenschaefer.github.io/packages/") package-archives :test 'equal)
+
+;; Prefer newer byte-compiled files
+(setq load-prefer-newer t)
+
+;; Initialize packages
+(package-initialize)
+
+;; make sure to have downloaded archive description.
+;; Or use package-archive-contents as suggested by Nicolas Dudebout
+(or (file-exists-p package-user-dir)
+    (package-refresh-contents))
+
+;; fetch the list of packages available 
+;;(unless package-archive-contents
+;;  (package-refresh-contents))
+
+;; install the missing packages
+(let ((package-list '(use-package)))
+  (dolist (package package-list)
+    (unless (package-installed-p package)
+      (package-install package)))
+  )
+
+;; Activate use-package to use for remaining package management
+(require 'use-package)
+
+#+END_SRC
