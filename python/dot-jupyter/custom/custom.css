@@ -1,0 +1,51 @@
+#notebook_name {
+  font-family: "Fira Sans";
+}
+
+.CodeMirror {
+  font-family: "Fira Mono";
+}
+
+.output * {
+  font-family: "Fira Mono";
+}
+
+div.text_cell_render {
+  font-family: "Fira Sans";
+}
+
+div.text_cell_render pre, code {
+  font-family: "Fira Mono";
+}
+
+div.text_cell_render h1, h2, h3, h4, h5, h6 {
+  font-family: "Fira Sans";
+}
+
+div.text_cell_render h1 {
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+div.text_cell_render h2 {
+  font-size: 1.8em;
+}
+
+div.text_cell_render h3 {
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+div.text_cell_render h4 {
+  font-size: 1.3em;
+}
+
+div.text_cell_render h5 {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+div.text_cell_render h6 {
+  font-size: 1.1em;
+}
+
