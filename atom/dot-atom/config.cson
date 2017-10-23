@@ -1,6 +1,5 @@
 "*":
   Hydrogen:
-    kernelspec: "{}"
     languageMappings: '''
       {
           "Pweave markdown": "Python 3",
@@ -22,7 +21,6 @@
     general:
       beautifyEntireFileOnSave: false
     markdown:
-      beautify_on_save: true
       commonmark: true
       default_beautifier: "Remark"
     python:
