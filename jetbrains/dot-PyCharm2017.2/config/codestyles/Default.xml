@@ -1,0 +1,16 @@
+<code_scheme name="Default">
+  <option name="RIGHT_MARGIN" value="79" />
+  <option name="FORMATTER_TAGS_ENABLED" value="true" />
+  <Python>
+    <option name="SPACE_AROUND_POWER_OPERATOR" value="false" />
+    <option name="ALIGN_MULTILINE_IMPORTS" value="false" />
+    <option name="DICT_NEW_LINE_BEFORE_RIGHT_BRACE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_SORT_BY_TYPE_FIRST" value="false" />
+    <option name="OPTIMIZE_IMPORTS_JOIN_FROM_IMPORTS_WITH_SAME_SOURCE" value="true" />
+    <option name="FROM_IMPORT_NEW_LINE_AFTER_LEFT_PARENTHESIS" value="true" />
+    <option name="FROM_IMPORT_PARENTHESES_FORCE_IF_MULTILINE" value="true" />
+  </Python>
+  <codeStyleSettings language="Python">
+    <option name="BLANK_LINES_AFTER_IMPORTS" value="2" />
+  </codeStyleSettings>
+</code_scheme>
