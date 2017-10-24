@@ -5,12 +5,12 @@
     paths: [
       "~/Development/spyns"
     ]
-  }
+  },
   {
     title: "CSI-702: Homework02 Instructor Attempt"
-    group: "Mason Fall 2017"
+    group: "Mason Spring 2017"
     paths: [
       "~/Documents/work/teaching/2017_Spring_Semester/CSI-702_High_Performance_Computing/assignments/homework02-instructor-attempt"
     ]
-  }
+  },
 ]
