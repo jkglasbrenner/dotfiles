@@ -158,3 +158,7 @@ if [[ -d $HOME/.local/lib/perl5 ]]; then
   export PERL_MB_OPT="--install_base \"${HOME}/.local\""
   export PERL_MM_OPT="INSTALL_BASE=${HOME}/.local"
 fi
+
+# Skip Git LFS downloads when running "git pull"
+export GIT_LFS_SKIP_SMUDGE=1
+
