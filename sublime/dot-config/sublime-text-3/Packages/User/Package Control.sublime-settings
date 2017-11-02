@@ -9,6 +9,7 @@
 		"Alignment",
 		"Anaconda",
 		"AutoDocstring",
+		"AutoSoftWrap",
 		"BracketHighlighter",
 		"Clang Format",
 		"Conda",
