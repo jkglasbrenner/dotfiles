@@ -53,6 +53,12 @@ fi
 if [[ -d ${HOME}/.local/texlive/2017/bin/x86_64-linux ]]; then
     pathmunge ${HOME}/.local/texlive/2017/bin/x86_64-linux
 fi
+if [[ -d /opt/pgi/linux86-64/2017 ]]; then
+    pathmunge /opt/pgi/linux86-64/2017/bin
+    export PGI=/opt/pgi
+    export MANPATH=$MANPATH:/opt/pgi/linux86-64/2017/man
+    export LM_LICENSE_FILE=$LM_LICENSE_FILE:/opt/pgi/license.dat
+fi
 
 # Function for activating pyenv
 # Loosely based on https://unix.stackexchange.com/a/217629
@@ -161,4 +167,3 @@ fi
 
 # Skip Git LFS downloads when running "git pull"
 export GIT_LFS_SKIP_SMUDGE=1
-
