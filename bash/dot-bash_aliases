@@ -55,16 +55,16 @@ if [[ -d ${HOME}/.local/texlive/2017/bin/x86_64-linux ]]; then
 fi
 if [[ -d /opt/pgi/linux86-64/2017 ]]; then
     export PGI=/opt/pgi
-    export MANPATH=$MANPATH:${PGI}/linux86-64/2017/man
-    export LM_LICENSE_FILE=$LM_LICENSE_FILE:${PGI}/license.dat
+    export MANPATH=${PGI}/linux86-64/2017/man${MANPATH:+:${MANPATH}}
+    export LM_LICENSE_FILE=${PGI}/license.dat${LM_LICENSE_FILE:+:${LM_LICENSE_FILE}}
     pathmunge ${PGI}/linux86-64/2017/bin
 fi
 if [[ -d ${PGI}/linux86-64/2017/mpi/openmpi ]]; then
-    export MANPATH=$MANPATH:${PGI}/linux86-64/2017/mpi/openmpi/man
+    export MANPATH=${PGI}/linux86-64/2017/mpi/openmpi/share/man${MANPATH:+:${MANPATH}}
     pathmunge ${PGI}/linux86-64/2017/mpi/openmpi/bin
 fi
 if [[ -d ${PGI}/linux86-64/2017/mpi/mpavich ]]; then
-    export MANPATH=$MANPATH:${PGI}/linux86-64/2017/mpi/mpavich/man
+    export MANPATH=${PGI}/linux86-64/2017/mpi/mpavich/share/man${MANPATH:+:${MANPATH}}
     pathmunge ${PGI}/linux86-64/2017/mpi/mpavich/bin
 fi
 
