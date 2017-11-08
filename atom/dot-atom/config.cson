@@ -157,6 +157,10 @@
 ".latex.pweave.source":
   editor:
     preferredLineLength: 79
+".latex.rd.tex.text":
+  editor:
+    preferredLineLength: 80
+    tabLength: 2
 ".latex.source.weave":
   editor:
     preferredLineLength: 79
@@ -182,3 +186,7 @@
   editor:
     preferredLineLength: 79
     tabLength: 4
+".r.source":
+  editor:
+    preferredLineLength: 80
+    tabLength: 2
