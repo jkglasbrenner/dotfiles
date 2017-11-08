@@ -6,3 +6,15 @@ local({
   r["CRAN"] = "https://cran.rstudio.com/"
   options(repos = r)
 })
+options(
+  rice.color_scheme = "native",
+  rice.editing_mode = "vi",
+  rice.auto_indentation = TRUE,
+  rice.tab_size = 2,
+  rice.complete_while_typing = TRUE,
+  rice.auto_width = TRUE,
+  rice.prompt = "\033[0;34mr$>\033[0m ",
+  rice.shell_prompt = "\033[0;31m#!>\033[0m ",
+  rice.browse_prompt = "\033[0;33mBrowse[{}]>\033[0m ",
+  rice.suppress_reticulate_message = FALSE
+)
