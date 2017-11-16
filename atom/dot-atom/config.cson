@@ -146,8 +146,7 @@
     scrollSyncType: "Vertical + Horizontal"
   "status-bar": {}
   "symbols-tree-view": {}
-  "vim-mode-plus":
-    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
+  "vim-mode-plus": {}
   welcome:
     showOnStartup: false
   "zotero-citations": {}

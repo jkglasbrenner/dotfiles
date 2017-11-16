@@ -73,6 +73,7 @@ packages: [
   "sort-lines"
   "switch-header-source"
   "symbols-tree-view"
+  "teletype"
   "toggle-quotes"
   "tree-view-git-branch"
   "tree-view-git-status"
