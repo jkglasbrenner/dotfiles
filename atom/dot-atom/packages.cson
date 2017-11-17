@@ -39,6 +39,7 @@ packages: [
   "language-latex"
   "language-markdown"
   "language-mathematica"
+  "language-r"
   "language-weave"
   "linter"
   "linter-clang"
