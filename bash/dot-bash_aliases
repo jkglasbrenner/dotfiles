@@ -173,5 +173,12 @@ if [[ -d $HOME/.local/lib/perl5 ]]; then
   export PERL_MM_OPT="INSTALL_BASE=${HOME}/.local"
 fi
 
+# NodeJS
+if [[ -d $HOME/.nvm ]]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
 # Skip Git LFS downloads when running "git pull"
 export GIT_LFS_SKIP_SMUDGE=1
