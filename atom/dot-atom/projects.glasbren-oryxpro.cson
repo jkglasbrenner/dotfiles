@@ -20,4 +20,11 @@
       "~/Documents/work/teaching/2017_Spring_Semester/CSI-702_High_Performance_Computing/assignments/homework02-instructor-attempt"
     ]
   }
+  {
+    title: "JS Random Walk"
+    group: "Development"
+    paths: [
+      "~/Development/js-random-walk"
+    ]
+  }
 ]
