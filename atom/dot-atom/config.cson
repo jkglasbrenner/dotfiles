@@ -73,8 +73,14 @@
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "alpenglow-twilight-atom-syntax"
+    ]
   editor:
     fontFamily: "Hack"
+    fontSize: 16
+    lineHeight: 1.2
     preferredLineLength: 79
     scrollPastEnd: true
     showIndentGuide: true
