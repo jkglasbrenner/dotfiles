@@ -189,3 +189,6 @@
   editor:
     preferredLineLength: 80
     tabLength: 2
+runner:
+  scopes:
+    js: "node"
