@@ -21,10 +21,10 @@
     ]
   }
   {
-    title: "JS Random Walk"
-    group: "Development"
+    title: "ising.js"
+    group: "teaching"
     paths: [
-      "~/Development/js-random-walk"
+      "~/Courses/CDS-101/simulations/ising-model"
     ]
   }
 ]
