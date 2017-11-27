@@ -47,6 +47,8 @@
       "atom-ide-diagnostics-ui": false
   "atom-package-sync":
     syncSettings: false
+  "atom-ternjs":
+    useSnippets: true
   "atomic-rtags":
     rdmAutoSpawn: true
   "auto-update-plus":
@@ -75,11 +77,11 @@
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
-      "alpenglow-twilight-atom-syntax"
+      "afterglow-plus"
     ]
   editor:
     fontFamily: "Hack"
-    fontSize: 16
+    fontSize: 18
     lineHeight: 1.2
     preferredLineLength: 79
     scrollPastEnd: true
@@ -130,6 +132,8 @@
       linterDecorationsZIndex: 0
       pigments: true
       pigmentsDecorationsZIndex: 0
+  "one-dark-ui":
+    fontSize: 16
   "package-sync":
     createOnChange: true
     forceOverwrite: true
@@ -156,9 +160,39 @@
   welcome:
     showOnStartup: false
   "zotero-citations": {}
+".babel.regexp.source":
+  editor:
+    tabLength: 2
+    tabType: "soft"
 ".basic.html.text":
   editor:
     tabLength: 2
+".css.source.styled":
+  editor:
+    tabLength: 2
+    tabType: "soft"
+".js.jsx.source":
+  editor:
+    tabLength: 2
+    tabType: "soft"
+".js.regexp.replacement.source":
+  editor:
+    tabLength: 2
+".js.regexp.source":
+  editor:
+    tabLength: 2
+".js.source":
+  editor:
+    tabLength: 2
+    tabType: "soft"
+".jsdoc.source":
+  editor:
+    tabLength: 2
+    tabType: "soft"
+".languagebabel.ttlextension":
+  editor:
+    tabLength: 2
+    tabType: "soft"
 ".latex.pweave.source":
   editor:
     preferredLineLength: 79
