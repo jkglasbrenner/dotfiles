@@ -72,6 +72,7 @@
       "linter-pylint"
       "linter-flake8"
       "markdown-preview-plus-opener"
+      "linter-pydocstyle"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
@@ -96,14 +97,17 @@
       "source.pweave.md"
       "text.md"
     ]
+  "linter-pydocstyle": {}
   "linter-pylama":
+    configFileLoad: "Use pylama config"
     executablePath: "~/.pyenv/shims/pylama, pylama, pylama.exe"
     ignoreErrorsAndWarnings: "D203,D213,W0621"
     interpreter: "~/.pyenv/shims/python, python, python.exe"
     pylamaVersion: "external"
-    usePylint: true
+    useIsort: true
   "linter-ui-default":
     decorateOnTreeView: "Files and Directories"
+    showPanel: true
   "markdown-preview-plus":
     enablePandoc: true
     grammars: [
