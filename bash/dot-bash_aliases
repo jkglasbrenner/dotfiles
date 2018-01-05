@@ -67,36 +67,39 @@ if [[ -d ${PGI}/linux86-64/2017/mpi/mpavich ]]; then
     export MANPATH=${PGI}/linux86-64/2017/mpi/mpavich/share/man${MANPATH:+:${MANPATH}}
     pathmunge ${PGI}/linux86-64/2017/mpi/mpavich/bin
 fi
+if [[ -d ${HOME}/.anaconda3/bin ]]; then
+    pathmunge ${HOME}/.anaconda3/bin
+fi
 
 # Function for activating pyenv
 # Loosely based on https://unix.stackexchange.com/a/217629
-pyenv-activate () {
-  if ! echo "$PATH" | /bin/grep -Eq "(^|:)${HOME}/.pyenv/shims($|:)" ; then
-    eval "$(pyenv init -)"
-    # Running `eval "$(pyenv init -)" also adds the function
-    # pyenv into the bash environment. Use `export -f`
-    # to put it in the global environment so it can be passed to subshells
-    # and to tmux sessions.
-    export -f pyenv
-  fi
-  if ! echo "$PATH" | /bin/grep -Eq "(^|:)${HOME}/.pyenv/plugins/pyenv-virtualenv/shims($|:)" ; then
-    eval "$(pyenv virtualenv-init -)"
-    # Running `eval "$(pyenv virtualenv-init -)"` also adds the function
-    # _pyenv_virtualenv_hook into the bash environment. Use `export -f`
-    # to put it in the global environment so it can be passed to subshells
-    # and to tmux sessions.
-    export -f _pyenv_virtualenv_hook
-  fi
-}
+# pyenv-activate () {
+#   if ! echo "$PATH" | /bin/grep -Eq "(^|:)${HOME}/.pyenv/shims($|:)" ; then
+#     eval "$(pyenv init -)"
+#     # Running `eval "$(pyenv init -)" also adds the function
+#     # pyenv into the bash environment. Use `export -f`
+#     # to put it in the global environment so it can be passed to subshells
+#     # and to tmux sessions.
+#     export -f pyenv
+#   fi
+#   if ! echo "$PATH" | /bin/grep -Eq "(^|:)${HOME}/.pyenv/plugins/pyenv-virtualenv/shims($|:)" ; then
+#     eval "$(pyenv virtualenv-init -)"
+#     # Running `eval "$(pyenv virtualenv-init -)"` also adds the function
+#     # _pyenv_virtualenv_hook into the bash environment. Use `export -f`
+#     # to put it in the global environment so it can be passed to subshells
+#     # and to tmux sessions.
+#     export -f _pyenv_virtualenv_hook
+#   fi
+# }
 
 # Remove conda virtualenv prefixes for command prompt
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 # Pyenv setup
-if [[ -d $HOME/.pyenv/bin ]]; then
-    pathmunge ${HOME}/.pyenv/bin
-    pyenv-activate
-fi
+# if [[ -d $HOME/.pyenv/bin ]]; then
+#     pathmunge ${HOME}/.pyenv/bin
+#     pyenv-activate
+# fi
 
 # Function to show virtual environment when desired
 case "$TERM" in
@@ -137,7 +140,7 @@ show_virtual_env() {
 }
 
 # Show Virtual Environment
-PS1='$(show_virtual_env)'${PS1_INIT}
+# PS1='$(show_virtual_env)'${PS1_INIT}
 
 # Start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
