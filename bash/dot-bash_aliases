@@ -183,5 +183,9 @@ if [[ -d $HOME/.nvm ]]; then
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
+if [[ -d $HOME/.nvm/versions/node/v9.2.0/lib/node_modules ]]; then
+  export NODE_PATH="${NODE_PATH:+${NODE_PATH}:}${HOME}/.nvm/versions/node/v9.2.0/lib/node_modules"
+fi
+
 # Skip Git LFS downloads when running "git pull"
 export GIT_LFS_SKIP_SMUDGE=1
