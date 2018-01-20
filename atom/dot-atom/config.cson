@@ -82,8 +82,9 @@
     ]
   editor:
     fontFamily: "Hack"
-    fontSize: 18
-    lineHeight: 1.2
+    fontSize: 16
+    invisibles: {}
+    lineHeight: 1.15
     preferredLineLength: 79
     scrollPastEnd: true
     showIndentGuide: true
@@ -137,7 +138,7 @@
       pigments: true
       pigmentsDecorationsZIndex: 0
   "one-dark-ui":
-    fontSize: 16
+    fontSize: 14
   "package-sync":
     createOnChange: true
     forceOverwrite: true
