@@ -3,10 +3,10 @@
     <property name="created">2017-10-24T16:45:34</property>
     <property name="ide">Python</property>
     <property name="ideVersion">2017.2.3.0.0</property>
-    <property name="modified">2018-01-26T18:35:55</property>
+    <property name="modified">2018-01-27T09:37:18</property>
     <property name="originalScheme">ZenBurnEmacsColors</property>
+    <property name="rainbow Default language">true</property>
   </metaInfo>
-  <option name="LINE_SPACING" value="1.25" />
   <colors>
     <option name="ADDED_LINES_COLOR" value="295622" />
     <option name="ANNOTATIONS_COLOR" value="8b999f" />
@@ -1001,6 +1001,31 @@
       </value>
     </option>
     <option name="PY.STRING.U" baseAttributes="DEFAULT_STRING" />
+    <option name="RAINBOW_COLOR0">
+      <value>
+        <option name="FOREGROUND" value="ffceac" />
+      </value>
+    </option>
+    <option name="RAINBOW_COLOR1">
+      <value>
+        <option name="FOREGROUND" value="bf9478" />
+      </value>
+    </option>
+    <option name="RAINBOW_COLOR2">
+      <value>
+        <option name="FOREGROUND" value="d6a052" />
+      </value>
+    </option>
+    <option name="RAINBOW_COLOR3">
+      <value>
+        <option name="FOREGROUND" value="7cb8bb" />
+      </value>
+    </option>
+    <option name="RAINBOW_COLOR4">
+      <value>
+        <option name="FOREGROUND" value="ff978e" />
+      </value>
+    </option>
     <option name="REQUIRE_GEM_CALL">
       <value>
         <option name="FONT_TYPE" value="1" />
