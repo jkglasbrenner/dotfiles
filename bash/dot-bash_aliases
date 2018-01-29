@@ -168,6 +168,10 @@ fi
 # Disable terminal scroll lock with C-s
 stty -ixon
 
+# RStudio
+export RSTUDIO_WHICH_R="${HOME}/.anaconda3/bin/R"
+
+
 # Perl5
 if [[ -d $HOME/.local/lib/perl5 ]]; then
   export PERL5LIB="${HOME}/.local/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
