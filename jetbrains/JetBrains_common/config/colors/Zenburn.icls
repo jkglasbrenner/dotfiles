@@ -3,7 +3,7 @@
     <property name="created">2017-10-24T16:45:34</property>
     <property name="ide">Python</property>
     <property name="ideVersion">2017.2.3.0.0</property>
-    <property name="modified">2018-01-27T12:10:50</property>
+    <property name="modified">2018-01-27T14:29:02</property>
     <property name="originalScheme">ZenBurnEmacsColors</property>
     <property name="rainbow Default language">true</property>
   </metaInfo>
@@ -178,6 +178,11 @@
     <option name="CONSOLE_CYAN_OUTPUT">
       <value>
         <option name="FOREGROUND" value="33cccc" />
+      </value>
+    </option>
+    <option name="CONSOLE_DARKGRAY_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="999999" />
       </value>
     </option>
     <option name="CONSOLE_ERROR_OUTPUT">
@@ -771,12 +776,11 @@
     <option name="JS.ATTRIBUTE">
       <value />
     </option>
-    <option name="JS.PARAMETER">
-      <value>
-        <option name="EFFECT_COLOR" value="a9b7c6" />
-        <option name="EFFECT_TYPE" value="1" />
-      </value>
-    </option>
+    <option name="JS.GLOBAL_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE" />
+    <option name="JS.INSTANCE_MEMBER_FUNCTION" baseAttributes="DEFAULT_INSTANCE_METHOD" />
+    <option name="JS.LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
+    <option name="JS.PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
+    <option name="JS.REGEXP" baseAttributes="DEFAULT_STRING" />
     <option name="LABEL">
       <value>
         <option name="FONT_TYPE" value="2" />
@@ -987,6 +991,8 @@
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
+    <option name="PY.FUNC_DEFINITION" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
+    <option name="PY.KEYWORD_ARGUMENT" baseAttributes="DEFAULT_PARAMETER" />
     <option name="PY.PREDEFINED_DEFINITION">
       <value>
         <option name="FOREGROUND" value="93e0e3" />
@@ -1003,6 +1009,7 @@
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
+    <option name="PY.STRING.U" baseAttributes="DEFAULT_STRING" />
     <option name="RAINBOW_COLOR0">
       <value>
         <option name="FOREGROUND" value="ffceac" />
