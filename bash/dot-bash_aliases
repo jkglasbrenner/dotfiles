@@ -194,7 +194,3 @@ fi
 # Skip Git LFS downloads when running "git pull"
 export GIT_LFS_SKIP_SMUDGE=1
 
-# Source MKL libraries if present
-if [[ -f /opt/intel/bin/compilervars.sh ]]; then
-  source /opt/intel/bin/compilervars.sh intel64
-fi
