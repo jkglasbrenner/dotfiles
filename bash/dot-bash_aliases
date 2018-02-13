@@ -181,7 +181,9 @@ fi
 stty -ixon
 
 # RStudio
-if [[ -f $HOME/.anaconda3/bin/R ]]; then
+if [[ -f /usr/bin/R ]]; then
+  export RSTUDIO_WHICH_R="/usr/bin/R"
+elif [[ -f $HOME/.anaconda3/bin/R ]]; then
   export RSTUDIO_WHICH_R="${HOME}/.anaconda3/bin/R"
 fi
 
