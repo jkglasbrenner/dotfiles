@@ -15,6 +15,8 @@
     bash:
       beautify_on_save: true
       indent_size: 2
+    cpp:
+      default_beautifier: "clang-format"
     executables:
       isort:
         path: "/usr/bin/env isort"
@@ -73,6 +75,8 @@
       "linter-flake8"
       "markdown-preview-plus-opener"
       "linter-pydocstyle"
+      "wrap-guide"
+      "markdown-writer"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
@@ -82,7 +86,7 @@
     ]
   editor:
     fontFamily: "Hack"
-    fontSize: 16
+    fontSize: 15
     invisibles: {}
     lineHeight: 1.15
     preferredLineLength: 79
@@ -91,6 +95,8 @@
     tabLength: 4
   "exception-reporting":
     userId: "a9970b71-c592-4094-a1ca-5774c7ea9f09"
+  "language-markdown":
+    addListItems: false
   "linter-markdown":
     scopes: [
       "source.gfm"
@@ -137,6 +143,10 @@
       linterDecorationsZIndex: 0
       pigments: true
       pigmentsDecorationsZIndex: 0
+  "multi-wrap-guide":
+    columns: [
+      79
+    ]
   "one-dark-ui":
     fontSize: 14
   "package-sync":
@@ -224,8 +234,13 @@
     preferredLineLength: 79
 ".md.text":
   editor:
-    preferredLineLength: 79
     scrollPastEnd: true
+    tabLength: 4
+    tabType: "soft"
+  "multi-wrap-guide":
+    columns: [
+      79
+    ]
 ".pweave.restructuredtext.source":
   editor:
     preferredLineLength: 79
