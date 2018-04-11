@@ -4,4 +4,5 @@ colors zenburn
 :imap jk <Esc>
 :set backspace=indent,eol,start
 set tabstop=4
+nnoremap <esc> :noh<return><esc>
 
