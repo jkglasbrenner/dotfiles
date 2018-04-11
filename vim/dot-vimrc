@@ -1,0 +1,7 @@
+set t_Co=256
+syntax enable
+colors zenburn
+:imap jk <Esc>
+:set backspace=indent,eol,start
+set tabstop=4
+
