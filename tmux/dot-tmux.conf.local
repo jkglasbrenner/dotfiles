@@ -244,6 +244,7 @@ set -g history-limit 50000
 # Automatically set window title
 # set-window-option -g automatic-rename on
 # set-option -g set-titles on
+set-option -g allow-rename off
 
 # Change some colors
 tmux_conf_theme_pane_border='#7F9F7F'                   # zenburn-green
