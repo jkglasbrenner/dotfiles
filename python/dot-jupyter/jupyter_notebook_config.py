@@ -192,7 +192,7 @@ c.NotebookApp.mathjax_config = 'TeX-AMS_CHTML-full,Safe'
 
 ## A custom url for MathJax.js. Should be in the form of a case-sensitive url to
 #  MathJax, for example:  /static/components/MathJax/MathJax.js
-c.NotebookApp.mathjax_url = 'https://gitlab.datamaterials.group/mathjax/MathJax.js'
+# c.NotebookApp.mathjax_url = 'https://gitlab.datamaterials.group/mathjax/MathJax.js'
 
 ## Dict of Python modules to load as notebook server extensions.Entry values can
 #  be used to enable and disable the loading ofthe extensions. The extensions
