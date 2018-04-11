@@ -8,7 +8,9 @@
     <property name="ExpandBeforeRunStepsPanel" value="true" />
     <property name="ExpandRunDashboardTypesPanel" value="false" />
     <property name="ExternalToolDialog.advanced.expanded" value="true" />
-    <property name="FileTemplates.SelectedTemplate" value="C Source File" />
+    <property name="FileColorsForProjectViewEnabled" value="true" />
+    <property name="FileColorsForTabsEnabled" value="true" />
+    <property name="FileTemplates.SelectedTemplate" value="HTML File" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="PLUGIN_FILTER" value="make&#10;cmake&#10;check&#10;unit&#10;style" />
     <property name="SearchEveryWhereHistory" value="gg" />
@@ -40,12 +42,15 @@
     <property name="evlsprt.CL-181.3986.16" value="16277c87902" />
     <property name="evlsprt2.CL-181.3007.15" value="1617231e0b4" />
     <property name="evlsprt2.CL-181.3986.16" value="1625bb6791f" />
+    <property name="evlsprt3.181" value="14" />
     <property name="evlsprt3.CL-181.3007.15" value="17" />
     <property name="evlsprt3.CL-181.3494.7" value="10" />
     <property name="evlsprt3.CL-181.3870.21" value="10" />
     <property name="evlsprt3.CL-181.3986.16" value="17" />
-    <property name="file.chooser.recent.files" value="/usr/bin/valgrind&#10;/usr/bin/mpirun&#10;/home/james/Courses/CSI-702/homework/apc-homework-2b&#10;/home/james/Courses/CSI-702/semesters/2018_spring/homework/submissions/homework-2-part-1/assignment-2-part-1-boothsl&#10;/home/james/Courses/CSI-702/semesters/2018_spring/homework/assignment-2-part-1-jkglasbrenner&#10;/home/james/Courses/CSI-702/semesters/2018_spring/homework/submissions/homework-1/assignment-1-optimize-matrix-multiplication-boothsl&#10;/home/james/Courses/CSI-702/semesters/2018_spring/homework/templates/template-homework-1&#10;/home/james/Courses/CSI-702/semesters/2018_spring/homework/assignment-1-optimize-matrix-multiplication-jkglasbrenner&#10;/home/james/Courses/CSI-702/homework/apc-homework-1&#10;/home/james/Downloads/hw1/hw1&#10;/usr/bin/clang-format&#10;/home/james/Development/spyns" />
-    <property name="file.gist.reindex.count" value="318" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/Courses/CSI-702/semesters/2018_spring/homework/assignment-2-part-3-jkglasbrenner&#10;/home/james/Courses/CSI-702/homework/apc-homework-2c&#10;/usr/bin/valgrind&#10;/usr/bin/mpirun&#10;/home/james/Courses/CSI-702/homework/apc-homework-2b&#10;/home/james/Courses/CSI-702/semesters/2018_spring/homework/submissions/homework-2-part-1/assignment-2-part-1-boothsl&#10;/home/james/Courses/CSI-702/semesters/2018_spring/homework/assignment-2-part-1-jkglasbrenner&#10;/home/james/Courses/CSI-702/semesters/2018_spring/homework/submissions/homework-1/assignment-1-optimize-matrix-multiplication-boothsl&#10;/home/james/Courses/CSI-702/semesters/2018_spring/homework/templates/template-homework-1&#10;/home/james/Courses/CSI-702/semesters/2018_spring/homework/assignment-1-optimize-matrix-multiplication-jkglasbrenner&#10;/home/james/Courses/CSI-702/homework/apc-homework-1&#10;/home/james/Downloads/hw1/hw1&#10;/usr/bin/clang-format&#10;/home/james/Development/spyns" />
+    <property name="file.colors.enable.non.project" value="Orange" />
+    <property name="file.gist.reindex.count" value="429" />
+    <property name="fileTypeChangedCounter" value="1" />
     <property name="google-build-namespaces.property.HeaderFileExtensions" value="h,hh,hpp,hxx" />
     <property name="google-global-names-in-headers.property.HeaderFileExtensions" value="h" />
     <property name="google-readability-braces-around-statements.property.ShortStatementLines" value="1" />
@@ -80,7 +85,7 @@
     <property name="hicpp-use-equals-default.enabled" value="true" />
     <property name="hicpp-use-equals-delete.enabled" value="true" />
     <property name="hicpp-use-override.enabled" value="true" />
-    <property name="ideavim.statistics.timestamp" value="1521954783794" />
+    <property name="ideavim.statistics.timestamp" value="1522876384328" />
     <property name="last.imported.location" value="$USER_HOME$/Development/spyns" />
     <property name="lastTip" value="6" />
     <property name="llvm-header-guard.enabled" value="true" />
@@ -145,6 +150,7 @@
     <property name="modernize-use-transparent-functors.property.SafeMode" value="0" />
     <property name="modernize-use-using.enabled" value="true" />
     <property name="modernize-use-using.property.IgnoreMacros" value="1" />
+    <property name="org.intellij.images.editor.actions.SetBackgroundImageDialog#recent" value="" />
     <property name="performance-faster-string-find.property.StringLikeClasses" value="std::basic_string" />
     <property name="performance-for-range-copy.property.WarnOnAllAutoCopies" value="0" />
     <property name="performance-inefficient-string-concatenation.property.StrictMode" value="0" />
