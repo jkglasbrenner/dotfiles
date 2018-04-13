@@ -25,7 +25,7 @@ set ttimeoutlen=10
 set t_Co=256
 
 if has('autocmd')
-  autocmd filetype python,make set shiftwidth=4 softtabstop=4
+  autocmd filetype python,make,mkd,rmd set shiftwidth=4 softtabstop=4
   autocmd filetype html,xml set listchars-=tab:>.
   autocmd filetype html,xml set listchars+=tab:\ \ 
 endif
@@ -51,6 +51,7 @@ cmap w!! w !sudo tee % >/dev/null
 
 nnoremap <Space> <Nop>
 let mapleader="\<Space>"
+let maplocalleader="\<Space>\<Space>"
 
 " Toggle whitespace
 nnoremap <leader>wr :set wrap! wrap?<CR>
