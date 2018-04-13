@@ -1,11 +1,11 @@
 execute pathogen#infect()
 filetype plugin indent on
-
-set t_Co=256
 syntax enable
 colors zenburn
-:imap jk <Esc>
-:set backspace=indent,eol,start
+
+set t_Co=256
 set tabstop=4
+
+imap jk <Esc>
 nnoremap <esc> :noh<return><esc>
 
