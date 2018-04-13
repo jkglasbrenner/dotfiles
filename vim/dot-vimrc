@@ -65,6 +65,13 @@ nnoremap <leader>hy :set hlsearch<CR>:let @/='\<<C-r><C-w>\>\c'<CR>
 " Toggle whitespace display
 nnoremap <leader>li :set list! list?<CR>
 
+" ListToggle
+let g:lt_location_list_toggle_map='<leader>ll'
+let g:lt_quickfix_list_toggle_map='<leader>lq'
+let g:lt_height=5
+nnoremap <leader>ln :lnext<CR>
+nnoremap <leader>lp :lprevious<CR>
+
 " Statusline
 function! GitBranch()
     return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
@@ -119,7 +126,6 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=2
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
-let g:syntastic_loc_list_height=5
 let g:syntastic_enable_r_lintr_checker=1
 let g:syntastic_rmd_checkers=['lintr']
 let g:syntastic_r_lintr_exec='/usr/bin/R'
