@@ -10,4 +10,6 @@ imap jk <Esc>
 nnoremap <esc> :noh<return><esc>
 
 let g:vim_markdown_folding_level = 6
-
+let g:pandoc#folding#fdc = 0
+let g:pandoc#syntax#conceal#use = 0
+let g:pandoc#folding#mode = "stacked"
