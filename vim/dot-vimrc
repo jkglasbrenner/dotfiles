@@ -1,15 +1,73 @@
+set nocompatible
+
 execute pathogen#infect()
-filetype plugin indent on
-syntax enable
+
+set hidden
+set nowrap
+set tabstop=4
+set shiftwidth=2
+set copyindent
+set showmatch
+set ignorecase
+set smartcase
+set hlsearch
+set undolevels=1000
+set visualbell
+set noerrorbells
+set nobackup
+set noswapfile
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set pastetoggle=<F2>
+set ttimeoutlen=10
+set t_Co=256
+
+if has('autocmd')
+  autocmd filetype python set shiftwidth=4
+  autocmd filetype html,xml set listchars-=tab:>.
+  autocmd filetype html,xml set listchars+=tab:\ \ 
+endif
+
 colors zenburn
 
-set t_Co=256
-set tabstop=4
+nnoremap ; :
+nnoremap <esc> :noh<return><esc>
+nnoremap j gj
+nnoremap k gk
 
 imap jk <Esc>
-nnoremap <esc> :noh<return><esc>
+vmap Q gq
+nmap Q gqap
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Get sudo privileges for saving by typing w!!
+cmap w!! w !sudo tee % >/dev/null
+
+nnoremap <Space> <Nop>
+let mapleader="\<Space>"
+
+" Toggle whitespace
+nnoremap <leader>wr :set wrap! wrap?<CR>
+" Case sensitive, partial match inclusive.
+nnoremap <leader>hi :set hlsearch<CR>:let @/='<C-r><C-w>'<CR>
+" Case sensitive, no partial match.
+nnoremap <leader>ho :set hlsearch<CR>:let @/='\<<C-r><C-w>\>'<CR>
+" Case insensitive, partial match inclusive.
+nnoremap <leader>hu :set hlsearch<CR>:let @/='<C-r><C-w>\c'<CR>
+" Case insensitive, no partial match.
+nnoremap <leader>hy :set hlsearch<CR>:let @/='\<<C-r><C-w>\>\c'<CR>
+" Toggle whitespace display
+nnoremap <leader>li :set list! list?<CR>
 
 let g:vim_markdown_folding_level = 6
+
 let g:pandoc#folding#fdc = 0
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#folding#mode = "stacked"
+
+let g:table_mode_corner='|'
+
