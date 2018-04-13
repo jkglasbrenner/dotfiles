@@ -4,8 +4,10 @@ execute pathogen#infect()
 
 set hidden
 set nowrap
-set tabstop=4
+set expandtab
 set shiftwidth=2
+set softtabstop=2
+set tabstop=4
 set copyindent
 set showmatch
 set ignorecase
@@ -23,7 +25,7 @@ set ttimeoutlen=10
 set t_Co=256
 
 if has('autocmd')
-  autocmd filetype python set shiftwidth=4
+  autocmd filetype python,make set shiftwidth=4 softtabstop=4
   autocmd filetype html,xml set listchars-=tab:>.
   autocmd filetype html,xml set listchars+=tab:\ \ 
 endif
@@ -63,11 +65,79 @@ nnoremap <leader>hy :set hlsearch<CR>:let @/='\<<C-r><C-w>\>\c'<CR>
 " Toggle whitespace display
 nnoremap <leader>li :set list! list?<CR>
 
-let g:vim_markdown_folding_level = 6
+" Statusline
+function! GitBranch()
+    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
 
-let g:pandoc#folding#fdc = 0
-let g:pandoc#syntax#conceal#use = 0
-let g:pandoc#folding#mode = "stacked"
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
 
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ 
+
+" Vimscript
+let g:vim_indent_cont = &sw
+
+" Markdown mode
+let g:vim_markdown_folding_level=6
+
+" Pandoc mode
+let g:pandoc#folding#fdc=0
+let g:pandoc#syntax#conceal#use=0
+let g:pandoc#folding#mode='stacked'
+
+" Table mode
 let g:table_mode_corner='|'
 
+" R/RMarkdown mode
+augroup filetype
+  autocmd! BufRead,BufNewFile  *.Rmd  set filetype=rmd
+augroup END
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let r_indent_align_args = 0
+
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=2
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_loc_list_height=5
+let g:syntastic_enable_r_lintr_checker=1
+let g:syntastic_rmd_checkers=['lintr']
+let g:syntastic_r_lintr_exec='/usr/bin/R'
+let g:syntastic_r_lintr_linters='with_defaults(
+  \   line_length_linter(100),
+  \   assignment_linter,
+  \   pipe_continuation_linter,
+  \   closed_curly_linter,
+  \   commas_linter,
+  \   infix_spaces_linter,
+  \   no_tab_linter,
+  \   object_name_linter("snake_case"),
+  \   open_curly_linter,
+  \   semicolon_terminator_linter,
+  \   spaces_inside_linter,
+  \   spaces_left_parentheses_linter,
+  \   trailing_whitespace_linter,
+  \   T_and_F_symbol_linter,
+  \   undesirable_function_linter,
+  \   undesirable_operator_linter
+  \ )'
