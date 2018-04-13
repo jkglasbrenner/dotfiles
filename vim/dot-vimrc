@@ -9,3 +9,5 @@ set tabstop=4
 imap jk <Esc>
 nnoremap <esc> :noh<return><esc>
 
+let g:vim_markdown_folding_level = 6
+
