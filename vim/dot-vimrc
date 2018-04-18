@@ -25,9 +25,10 @@ set ttimeoutlen=10
 set t_Co=256
 
 if has('autocmd')
-  autocmd filetype python,make,mkd,rmd set shiftwidth=4 softtabstop=4
-  autocmd filetype html,xml set listchars-=tab:>.
-  autocmd filetype html,xml set listchars+=tab:\ \ 
+  autocmd FileType python,make,mkd,rmd set shiftwidth=4
+  autocmd FileType python,make,mkd,rmd set softtabstop=4
+  autocmd FileType html,xml set listchars-=tab:>.
+  autocmd FileType html,xml set listchars+=tab:\ \ 
 endif
 
 colors zenburn
