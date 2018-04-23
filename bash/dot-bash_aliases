@@ -196,13 +196,13 @@ if [[ -d $HOME/.local/lib/perl5 ]]; then
 fi
 
 # NodeJS
-if [[ -d $HOME/.nvm ]]; then
+if [[ -d $HOME/.nvm && ! -d /opt/nvm ]]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
-if [[ -d $HOME/.nvm/versions/node/v9.4.0/lib/node_modules ]]; then
+if [[ -d $HOME/.nvm/versions/node/v9.4.0/lib/node_modules && ! -d /opt/nvm ]]; then
   export NODE_PATH="${NODE_PATH:+${NODE_PATH}:}${HOME}/.nvm/versions/node/v9.4.0/lib/node_modules"
 fi
 
