@@ -52,28 +52,28 @@ fi
 if [[ -d $HOME/.local/src/CLING/inst/bin ]]; then
     pathmunge ${HOME}/.local/src/CLING/inst/bin
 fi
-if [[ -d /usr/local/cuda-8.0/bin ]]; then
+if [[ -d /usr/local/cuda-8.0/bin && ! -d /usr/local/Modules/modulefiles/cuda ]]; then
     pathmunge /usr/local/cuda-8.0/bin
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64/${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 fi
 if [[ -d ${HOME}/.local/texlive/2017/bin/x86_64-linux ]]; then
     pathmunge ${HOME}/.local/texlive/2017/bin/x86_64-linux
 fi
-if [[ -d /opt/pgi/linux86-64/2017 ]]; then
+if [[ -d /opt/pgi/linux86-64/2017 && ! -d /usr/local/Modules/modulefiles/pgi ]]; then
     export PGI=/opt/pgi
     export MANPATH=${PGI}/linux86-64/2017/man${MANPATH:+:${MANPATH}}
     export LM_LICENSE_FILE=${PGI}/license.dat${LM_LICENSE_FILE:+:${LM_LICENSE_FILE}}
     pathmunge ${PGI}/linux86-64/2017/bin
 fi
-if [[ -d ${PGI}/linux86-64/2017/mpi/openmpi ]]; then
+if [[ -d ${PGI}/linux86-64/2017/mpi/openmpi && ! -d /usr/local/Modules/modulefiles/openmpi ]]; then
     export MANPATH=${PGI}/linux86-64/2017/mpi/openmpi/share/man${MANPATH:+:${MANPATH}}
     pathmunge ${PGI}/linux86-64/2017/mpi/openmpi/bin
 fi
-if [[ -d ${PGI}/linux86-64/2017/mpi/mpavich ]]; then
+if [[ -d ${PGI}/linux86-64/2017/mpi/mpavich && ! -d /usr/local/Modules/modulefiles/mpavich ]]; then
     export MANPATH=${PGI}/linux86-64/2017/mpi/mpavich/share/man${MANPATH:+:${MANPATH}}
     pathmunge ${PGI}/linux86-64/2017/mpi/mpavich/bin
 fi
-if [[ -d ${HOME}/.anaconda3/bin ]]; then
+if [[ -d ${HOME}/.anaconda3/bin && ! -f ${HOME}/.local/Modules/anaconda3 ]]; then
     pathmunge ${HOME}/.anaconda3/bin
 fi
 
