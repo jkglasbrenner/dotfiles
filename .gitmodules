@@ -1,3 +1,0 @@
-[submodule "emacs/dot-emacs.d/spacemacs"]
-	path = emacs/dot-emacs.d/spacemacs
-	url = https://github.com/syl20bnr/spacemacs
