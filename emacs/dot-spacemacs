@@ -55,12 +55,12 @@ This function should only modify configuration layer settings."
      html
      imenu-list
      javascript
-     latex
+     (latex :variables :variables latex-build-command "LatexMk")
      major-modes
      markdown
      neotree
      org
-     pandoc
+     ;; pandoc
      pdf-tools
      python
      (shell :variables
@@ -468,6 +468,89 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; (cl-pushnew '(font . "Hack-11") default-frame-alist :test 'equal)
+  (setq TeX-engine 'luatex)
+  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
+  (with-eval-after-load 'ox-latex
+    (setq org-latex-compiler "lualatex"
+          org-latex-pdf-process '("latexmk -lualatex -bibtex-cond -outdir=%o -f %f")
+          org-latex-hyperref-template (concat "\\hypersetup{" "\n"
+                                              "  pdfauthor={%a}," "\n"
+                                              "  pdftitle={%t}," "\n"
+                                              "  pdfkeywords={%k}," "\n"
+                                              "  pdfsubject={%d}," "\n"
+                                              "  pdfcreator={%c}," "\n"
+                                              "  pdflang={%L}," "\n"
+                                              "  colorlinks={true}," "\n"
+                                              "  linkcolor={Maroon}," "\n"
+                                              "  citecolor={Blue}," "\n"
+                                              "  urlcolor={Blue}," "\n"
+                                              "  pdfhighlight=O," "\n"
+                                              "  pdfborder={0 0 0}," "\n"
+                                              "  bookmarksnumbered={true}," "\n"
+                                              "  bookmarksopen={true}," "\n"
+                                              "  breaklinks={true}," "\n"
+                                              "  hyperfigures={true}," "\n"
+                                              "  pdfstartview={FitH top}}")
+          org-latex-default-packages-alist (quote (("utf8" "inputenc" t ("pdflatex"))
+                                                   ("T1" "fontenc" t ("pdflatex"))
+                                                   ("" "fontspec" t ("xelatex" "lualatex"))
+                                                   ("" "luaotfload" t ("lualatex"))
+                                                   ("math-style=TeX" "unicode-math" t ("xelatex" "lualatex"))
+                                                   ("" "textcomp" t ("pdflatex"))
+                                                   ("" "luacode" t ("lualatex"))
+                                                   ("" "ifxetex" t)
+                                                   ("" "ifluatex" t)
+                                                   ("" "amssymb" t)
+                                                   ("" "amsmath" t)
+                                                   ("normalem" "ulem" t)
+                                                   ("" "graphicx" t)
+                                                   ("" "grffile" t)
+                                                   ("" "wrapfig" nil)
+                                                   ("" "capt-of" nil)
+                                                   ("" "longtable" nil)
+                                                   ("" "rotating" nil)
+                                                   ("hyphens" "url" nil)
+                                                   ("" "microtype" nil)
+                                                   ("" "upquote" nil)))
+          org-latex-packages-alist (quote (("unicode=true" "hyperref" nil))))
+    (let ((article-class `("article"
+                           ,(concat "\\documentclass[10pt]{article}" "\n"
+                                    "\\usepackage[letterpaper, margin=0.79in]{geometry}" "\n"
+                                    "[DEFAULT-PACKAGES]" "\n"
+                                    "[PACKAGES]" "\n"
+                                    "[EXTRA]" "\n"
+                                    "\\UseMicrotypeSet[protrusion]{basicmath}" "\n"
+                                    "\\urlstyle{same}" "\n"
+                                    "\\ifnum 0\\ifxetex 1\\fi\\ifluatex 1\\fi=1" "\n"
+                                    "  \\defaultfontfeatures{Ligatures=TeX}" "\n"
+                                    "  \\setmainfont{Libertinus Serif}" "\n"
+                                    "  \\setsansfont{Libertinus Sans}" "\n"
+                                    "  \\setmonofont{Libertinus Mono}" "\n"
+                                    "  \\setmathfont{Libertinus Math}")
+                           ("\\section{%s}" . "\\section*{%s}")
+                           ("\\subsection{%s}" . "\\subsection*{%s}")
+                           ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                           ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                           ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+          (memoir-class `("memoir"
+                          ,(concat "\\documentclass[10pt,letterpaper,oneside,onecolumn,openany,final]{memoir}" "\n"
+                                   "[DEFAULT-PACKAGES]" "\n"
+                                   "[PACKAGES]" "\n"
+                                   "[EXTRA]" "\n"
+                                   "\\usepackage{tikz}" "\n"
+                                   "\\providecommand{\\HUGE}{\\Huge}" "\n"
+                                   "\\newlength{\\drop}" "\n"
+                                   "\\newcommand*{\\plogo}{\\fbox{$\\mathcal{PL}$}}")
+                          ("\\chapter{%s}" . "\\chapter*{%s}")
+                          ("\\section{%s}" . "\\section*{%s}")
+                          ("\\subsection{%s}" . "\\subsection*{%s}")
+                          ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                          ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                          ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+
+      (setcar org-latex-classes article-class)
+      (add-to-list 'org-latex-classes memoir-class)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
