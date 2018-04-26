@@ -55,11 +55,13 @@ This function should only modify configuration layer settings."
      html
      imenu-list
      javascript
-     (latex :variables :variables latex-build-command "LatexMk")
+     (latex :variables
+            latex-build-command "LatexMk")
      major-modes
      markdown
      neotree
-     org
+     (org :variables
+          org-export-allow-bind-keywords t)
      ;; pandoc
      pdf-tools
      python
