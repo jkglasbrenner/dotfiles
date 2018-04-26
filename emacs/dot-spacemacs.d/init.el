@@ -77,6 +77,7 @@ This function should only modify configuration layer settings."
      yaml
      ;; user-defined layers
      conda
+     configure-org
      )
 
    ;; List of additional packages that will be installed without being
@@ -467,90 +468,8 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  ;; (cl-pushnew '(font . "Hack-11") default-frame-alist :test 'equal)
   (setq TeX-engine 'luatex)
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
-
-  (with-eval-after-load 'ox-latex
-    (setq org-latex-compiler "lualatex"
-          org-latex-pdf-process '("latexmk -lualatex -bibtex-cond -outdir=%o -f %f")
-          org-latex-hyperref-template (concat "\\hypersetup{" "\n"
-                                              "  pdfauthor={%a}," "\n"
-                                              "  pdftitle={%t}," "\n"
-                                              "  pdfkeywords={%k}," "\n"
-                                              "  pdfsubject={%d}," "\n"
-                                              "  pdfcreator={%c}," "\n"
-                                              "  pdflang={%L}," "\n"
-                                              "  colorlinks={true}," "\n"
-                                              "  linkcolor={Maroon}," "\n"
-                                              "  citecolor={Blue}," "\n"
-                                              "  urlcolor={Blue}," "\n"
-                                              "  pdfhighlight=O," "\n"
-                                              "  pdfborder={0 0 0}," "\n"
-                                              "  bookmarksnumbered={true}," "\n"
-                                              "  bookmarksopen={true}," "\n"
-                                              "  breaklinks={true}," "\n"
-                                              "  hyperfigures={true}," "\n"
-                                              "  pdfstartview={FitH top}}")
-          org-latex-default-packages-alist (quote (("utf8" "inputenc" t ("pdflatex"))
-                                                   ("T1" "fontenc" t ("pdflatex"))
-                                                   ("" "fontspec" t ("xelatex" "lualatex"))
-                                                   ("" "luaotfload" t ("lualatex"))
-                                                   ("math-style=TeX" "unicode-math" t ("xelatex" "lualatex"))
-                                                   ("" "textcomp" t ("pdflatex"))
-                                                   ("" "luacode" t ("lualatex"))
-                                                   ("" "ifxetex" t)
-                                                   ("" "ifluatex" t)
-                                                   ("" "amssymb" t)
-                                                   ("" "amsmath" t)
-                                                   ("normalem" "ulem" t)
-                                                   ("" "graphicx" t)
-                                                   ("" "grffile" t)
-                                                   ("" "wrapfig" nil)
-                                                   ("" "capt-of" nil)
-                                                   ("" "longtable" nil)
-                                                   ("" "rotating" nil)
-                                                   ("hyphens" "url" nil)
-                                                   ("" "microtype" nil)
-                                                   ("" "upquote" nil)))
-          org-latex-packages-alist (quote (("unicode=true" "hyperref" nil))))
-    (let ((article-class `("article"
-                           ,(concat "\\documentclass[10pt]{article}" "\n"
-                                    "\\usepackage[letterpaper, margin=0.79in]{geometry}" "\n"
-                                    "[DEFAULT-PACKAGES]" "\n"
-                                    "[PACKAGES]" "\n"
-                                    "[EXTRA]" "\n"
-                                    "\\UseMicrotypeSet[protrusion]{basicmath}" "\n"
-                                    "\\urlstyle{same}" "\n"
-                                    "\\ifnum 0\\ifxetex 1\\fi\\ifluatex 1\\fi=1" "\n"
-                                    "  \\defaultfontfeatures{Ligatures=TeX}" "\n"
-                                    "  \\setmainfont{Libertinus Serif}" "\n"
-                                    "  \\setsansfont{Libertinus Sans}" "\n"
-                                    "  \\setmonofont{Libertinus Mono}" "\n"
-                                    "  \\setmathfont{Libertinus Math}")
-                           ("\\section{%s}" . "\\section*{%s}")
-                           ("\\subsection{%s}" . "\\subsection*{%s}")
-                           ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                           ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                           ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-          (memoir-class `("memoir"
-                          ,(concat "\\documentclass[10pt,letterpaper,oneside,onecolumn,openany,final]{memoir}" "\n"
-                                   "[DEFAULT-PACKAGES]" "\n"
-                                   "[PACKAGES]" "\n"
-                                   "[EXTRA]" "\n"
-                                   "\\usepackage{tikz}" "\n"
-                                   "\\providecommand{\\HUGE}{\\Huge}" "\n"
-                                   "\\newlength{\\drop}" "\n"
-                                   "\\newcommand*{\\plogo}{\\fbox{$\\mathcal{PL}$}}")
-                          ("\\chapter{%s}" . "\\chapter*{%s}")
-                          ("\\section{%s}" . "\\section*{%s}")
-                          ("\\subsection{%s}" . "\\subsection*{%s}")
-                          ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                          ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                          ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
-
-      (setcar org-latex-classes article-class)
-      (add-to-list 'org-latex-classes memoir-class)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -566,7 +485,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(zenburn-theme zen-and-art-theme yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum white-sand-theme web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe vala-snippets vala-mode uuidgen unfill underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme toc-org thrift tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit systemd symon sunny-day-theme sublime-themes subatomic256-theme subatomic-theme string-inflection stan-mode sql-indent spaceline-all-the-icons all-the-icons memoize spaceline powerline spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smeargle slim-mode shell-pop seti-theme scss-mode scad-mode sass-mode reverse-theme restart-emacs rebecca-theme realgud test-simple loc-changes load-relative rainbow-delimiters railscasts-theme qml-mode pyvenv pytest pyenv-mode py-isort purple-haze-theme pug-mode professional-theme popwin planet-theme pkgbuild-mode pippel pipenv pip-requirements phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el password-generator paradox spinner pandoc-mode ox-pandoc ht overseer orgit organic-green-theme org-ref pdf-tools key-chord org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-bullets org-brain open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme neotree naquadah-theme nameless mwim mustang-theme multi-term move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme matlab-mode material-theme markdown-toc markdown-mode majapahit-theme magit-gitflow madhat2r-theme macrostep lush-theme lorem-ipsum logcat livid-mode skewer-mode live-py-mode linum-relative link-hint light-soap-theme ledger-mode kivy-mode js2-refactor multiple-cursors js2-mode js-doc jinja2-mode jbeans-theme jazz-theme ir-black-theme insert-shebang inkpot-theme indent-guide importmagic epc concurrent deferred impatient-mode simple-httpd hy-mode hungry-delete htmlize hoon-mode hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation heroku-theme hemisu-theme helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose window-purpose imenu-list helm-projectile helm-mode-manager helm-make helm-gitignore request helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-bibtex parsebib helm-ag hc-zenburn-theme haml-mode gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate google-c-style golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md gandalf-theme fuzzy flyspell-correct-helm flyspell-correct flycheck-rtags flycheck-pos-tip pos-tip flycheck-ledger flycheck-bashate flycheck flx-ido flx flatui-theme flatland-theme fish-mode fill-column-indicator farmhouse-theme fancy-battery eyebrowse expand-region exotica-theme evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit git-commit ghub with-editor evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-cleverparens smartparens paredit evil-args evil-anzu anzu eval-sexp-fu highlight ess-R-data-view ctable ess julia-mode espresso-theme eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav editorconfig ebuild-mode dumb-jump dracula-theme dockerfile-mode docker json-mode tablist magit-popup docker-tramp json-snatcher json-reformat django-theme disaster diff-hl define-word darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme dactyl-mode cython-mode cyberpunk-theme csv-mode counsel-projectile projectile counsel swiper ivy pkg-info epl conda company-web web-completion-data company-tern dash-functional tern company-statistics company-shell company-rtags rtags company-c-headers company-auctex company-ansible company-anaconda company column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode clues-theme clean-aindent-mode clang-format cherry-blossom-theme centered-cursor-mode busybee-theme bubbleberry-theme browse-at-remote birds-of-paradise-plus-theme biblio biblio-core badwolf-theme auto-yasnippet yasnippet auto-highlight-symbol auto-dictionary auto-compile packed auctex-latexmk auctex arduino-mode apropospriate-theme anti-zenburn-theme ansible-doc ansible anaconda-mode pythonic f dash s ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme adoc-mode markup-faces adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core ac-ispell auto-complete popup which-key use-package org-plus-contrib hydra font-lock+ exec-path-from-shell evil goto-chg undo-tree diminish bind-map bind-key async)))
+   '(orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-brain gnuplot evil-org zenburn-theme zen-and-art-theme yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum white-sand-theme which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe vala-snippets vala-mode uuidgen use-package unfill underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme toc-org thrift tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit systemd symon sunny-day-theme sublime-themes subatomic256-theme subatomic-theme string-inflection stan-mode sql-indent spaceline-all-the-icons spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smeargle slim-mode shell-pop seti-theme scss-mode scad-mode sass-mode reverse-theme restart-emacs rebecca-theme realgud rainbow-delimiters railscasts-theme qml-mode pyvenv pytest pyenv-mode py-isort purple-haze-theme pug-mode professional-theme popwin planet-theme pkgbuild-mode pippel pipenv pip-requirements phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el password-generator paradox overseer organic-green-theme org-ref org-plus-contrib org-bullets open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme neotree naquadah-theme nameless mwim mustang-theme multi-term move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme matlab-mode material-theme markdown-toc majapahit-theme magit-gitflow madhat2r-theme macrostep lush-theme lorem-ipsum logcat livid-mode live-py-mode linum-relative link-hint light-soap-theme ledger-mode kivy-mode js2-refactor js-doc jinja2-mode jbeans-theme jazz-theme ir-black-theme insert-shebang inkpot-theme indent-guide importmagic impatient-mode hy-mode hungry-delete hoon-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation heroku-theme hemisu-theme helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate google-c-style golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md gandalf-theme fuzzy font-lock+ flyspell-correct-helm flycheck-rtags flycheck-pos-tip flycheck-ledger flycheck-bashate flx-ido flatui-theme flatland-theme fish-mode fill-column-indicator farmhouse-theme fancy-battery eyebrowse expand-region exotica-theme exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view espresso-theme eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav editorconfig ebuild-mode dumb-jump dracula-theme dockerfile-mode docker django-theme disaster diminish diff-hl define-word darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme dactyl-mode cython-mode cyberpunk-theme csv-mode counsel-projectile conda company-web company-tern company-statistics company-shell company-rtags company-c-headers company-auctex company-ansible company-anaconda column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized coffee-mode clues-theme clean-aindent-mode clang-format cherry-blossom-theme centered-cursor-mode busybee-theme bubbleberry-theme browse-at-remote birds-of-paradise-plus-theme badwolf-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk arduino-mode apropospriate-theme anti-zenburn-theme ansible-doc ansible ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme adoc-mode adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
