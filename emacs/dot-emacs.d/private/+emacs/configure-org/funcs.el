@@ -66,12 +66,16 @@
        "[EXTRA]" "\n"
        "\\UseMicrotypeSet[protrusion]{basicmath}" "\n"
        "\\urlstyle{same}" "\n"
-       "\\ifnum 0\\ifxetex 1\\fi\\ifluatex 1\\fi=1" "\n"
+       "\\ifnum 0\\ifxetex 1\\fi\\ifluatex 1\\fi=0" "\n"
+       "  \\usepackage{libertine}" "\n"
+       "  \\usepackage[libertine]{newtxmath}" "\n"
+       "\\else" "\n"
        "  \\defaultfontfeatures{Ligatures=TeX}" "\n"
        "  \\setmainfont{Libertinus Serif}" "\n"
        "  \\setsansfont{Libertinus Sans}" "\n"
-       "  \\setmonofont{Libertinus Mono}" "\n"
-       "  \\setmathfont{Libertinus Math}")
+       "  \\setmonofont[Scale=MatchLowercase]{Libertinus Mono}" "\n"
+       "  \\setmathfont[Scale=MatchUppercase]{Libertinus Math}" "\n"
+       "\\fi")
      ("\\section{%s}" . "\\section*{%s}")
      ("\\subsection{%s}" . "\\subsection*{%s}")
      ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
