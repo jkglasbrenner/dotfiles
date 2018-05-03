@@ -1,1 +1,1 @@
-../../colors/Zenburn/colors/zenburn.vim
+../../installed-colors/Zenburn/colors/zenburn.vim
