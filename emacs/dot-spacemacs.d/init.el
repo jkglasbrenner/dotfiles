@@ -471,7 +471,8 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq TeX-engine 'luatex
-        tab-width 4)
+        tab-width 4
+        evil-want-Y-yank-to-eol nil)
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
   )
 
