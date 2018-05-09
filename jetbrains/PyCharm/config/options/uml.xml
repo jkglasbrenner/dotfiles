@@ -1,5 +1,7 @@
 <application>
   <component name="UmlConfiguration">
+    <option name="defaultScope" value="Project Files" />
+    <option name="fitContentAfterLayout" value="true" />
     <option name="categories">
       <map>
         <entry id="Python" categories="Methods;Inner Classes;Fields" />
