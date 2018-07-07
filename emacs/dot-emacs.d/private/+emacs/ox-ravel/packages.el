@@ -14,13 +14,13 @@
 ;;; Code:
 
 (setq ox-ravel-packages
-      '((ox-ravel :location local)))
+      '((org :location built-in)
+        (ox-ravel :location local)))
 
 (defun ox-ravel/init-ox-ravel ()
-  (use-package ox-ravel
-    :defer t
-    :config
-    (progn
-      (spacemacs//set-variables-for-ox-ravel))))
+  (spacemacs|use-package-add-hook org :post-config (require 'ox-ravel)))
+
+(defun ox-ravel/post-init-ox-ravel ()
+  (spacemacs//set-variables-for-ox-ravel))
 
 ;;; packages.el ends here
