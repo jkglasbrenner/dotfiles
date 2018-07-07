@@ -1,0 +1,4 @@
+# key: cv
+# name: chase_visa
+# --
+    Liabilities:Visa:Chase                   \$${1:price}

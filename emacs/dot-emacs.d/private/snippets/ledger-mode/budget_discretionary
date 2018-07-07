@@ -1,0 +1,4 @@
+# key: bd
+# name: budget_discretionary
+# --
+    * [Budget:Discretionary]                  \$${1:price}

@@ -1,0 +1,7 @@
+# key: ex
+# name: expenses
+# --
+    * Expenses:${2:}                               \$${1:price}
+    Liabilities:Visa:Chase                   \$-$1
+    * [Budget:${3:Discretionary}]                 \$-$1
+    * [Budget:Expenses:Chase Visa]            \$$1

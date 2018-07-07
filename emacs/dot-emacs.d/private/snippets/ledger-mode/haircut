@@ -1,0 +1,7 @@
+# key: hc
+# name: haircut
+# --
+    * Expenses:Grooming                       \$${1:price}
+    Liabilities:Visa:Chase                   \$-$1
+    * [Budget:Expenses:James Haircut]        \$-$1
+    * [Budget:Expenses:Chase Visa]            \$$1

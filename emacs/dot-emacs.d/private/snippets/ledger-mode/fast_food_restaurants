@@ -1,0 +1,7 @@
+# key: ff
+# name: fast_food_restaurants
+# --
+    * Expenses:Restaurants:Fast Food          \$${1:price}
+    Liabilities:Visa:Chase                   \$-$1
+    * [Budget:Groceries]                     \$-$1
+    * [Budget:Expenses:Chase Visa]            \$$1

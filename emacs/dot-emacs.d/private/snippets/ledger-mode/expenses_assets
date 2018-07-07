@@ -1,0 +1,7 @@
+# key: exa
+# name: expenses_assets
+# --
+    * Expenses:                               \$${1:price}
+    Assets:Joint Checking                    \$-$1
+    * [Budget:]                              \$-$1
+    * [Assets:Joint Checking]                 \$$1

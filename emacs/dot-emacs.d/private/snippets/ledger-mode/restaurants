@@ -1,0 +1,7 @@
+# key: rest
+# name: restaurants
+# --
+    * Expenses:Restaurants:Sit Down           \$${1:price}
+    Liabilities:Visa:Chase                   \$-$1
+    * [Budget:${2:Groceries}]                     \$-$1
+    * [Budget:Expenses:Chase Visa]            \$$1

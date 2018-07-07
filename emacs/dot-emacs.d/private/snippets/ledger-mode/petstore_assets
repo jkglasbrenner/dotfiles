@@ -1,0 +1,7 @@
+# key: psa
+# name: petstore_assets
+# --
+    * Expenses:Pets:Store                     \$${1:price}
+    Assets:Joint Checking                    \$-$1
+    * [Budget:Expenses:Max Groceries]        \$-$1
+    * [Assets:Joint Checking]                 \$$1

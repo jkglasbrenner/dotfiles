@@ -1,0 +1,4 @@
+# key: bcv
+# name: budget_chase_visa
+# --
+    * [Budget:Expenses:Chase Visa]            \$${1:price}

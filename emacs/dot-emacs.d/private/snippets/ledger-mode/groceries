@@ -1,0 +1,7 @@
+# key: gr
+# name: groceries
+# --
+    * Expenses:Groceries                      \$${1:price}
+    Liabilities:Visa:Chase                   \$-$1
+    * [Budget:Groceries]                     \$-$1
+    * [Budget:Expenses:Chase Visa]            \$$1

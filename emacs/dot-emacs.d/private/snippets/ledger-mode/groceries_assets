@@ -1,0 +1,7 @@
+# key: gra
+# name: groceries_assets
+# --
+    * Expenses:Groceries                      \$${1:price}
+    Assets:Joint Checking                    \$-$1
+    * [Budget:Groceries]                     \$-$1
+    * [Assets:Joint Checking]                 \$$1

@@ -1,0 +1,7 @@
+# key: ps
+# name: petstore
+# --
+    * Expenses:Pets:Store                     \$${1:price}
+    Liabilities:Visa:Chase                   \$-$1
+    * [Budget:Expenses:Max Groceries]        \$-$1
+    * [Budget:Expenses:Chase Visa]            \$$1
