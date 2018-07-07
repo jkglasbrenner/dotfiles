@@ -61,7 +61,8 @@ This function should only modify configuration layer settings."
      markdown
      neotree
      (org :variables
-          org-export-allow-bind-keywords t)
+          org-export-allow-bind-keywords t
+          org-enable-github-support t)
      ;; pandoc
      pdf-tools
      python

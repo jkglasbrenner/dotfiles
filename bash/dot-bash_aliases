@@ -74,80 +74,9 @@ if [[ -d ${PGI}/linux86-64/2017/mpi/mpavich && ! -d /usr/local/Modules/modulefil
     export MANPATH=${PGI}/linux86-64/2017/mpi/mpavich/share/man${MANPATH:+:${MANPATH}}
     pathmunge ${PGI}/linux86-64/2017/mpi/mpavich/bin
 fi
-if [[ -d ${HOME}/.anaconda3/bin && ! -f ${HOME}/.local/Modules/anaconda3 ]]; then
-    pathmunge ${HOME}/.anaconda3/bin
+if [[ -d ${HOME}/.anaconda3/etc/profile.d ]]; then
+    . ${HOME}/.anaconda3/etc/profile.d/conda.sh
 fi
-
-# Function for activating pyenv
-# Loosely based on https://unix.stackexchange.com/a/217629
-# pyenv-activate () {
-#   if ! echo "$PATH" | /bin/grep -Eq "(^|:)${HOME}/.pyenv/shims($|:)" ; then
-#     eval "$(pyenv init -)"
-#     # Running `eval "$(pyenv init -)" also adds the function
-#     # pyenv into the bash environment. Use `export -f`
-#     # to put it in the global environment so it can be passed to subshells
-#     # and to tmux sessions.
-#     export -f pyenv
-#   fi
-#   if ! echo "$PATH" | /bin/grep -Eq "(^|:)${HOME}/.pyenv/plugins/pyenv-virtualenv/shims($|:)" ; then
-#     eval "$(pyenv virtualenv-init -)"
-#     # Running `eval "$(pyenv virtualenv-init -)"` also adds the function
-#     # _pyenv_virtualenv_hook into the bash environment. Use `export -f`
-#     # to put it in the global environment so it can be passed to subshells
-#     # and to tmux sessions.
-#     export -f _pyenv_virtualenv_hook
-#   fi
-# }
-
-# Remove conda virtualenv prefixes for command prompt
-# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
-# Pyenv setup
-# if [[ -d $HOME/.pyenv/bin ]]; then
-#     pathmunge ${HOME}/.pyenv/bin
-#     pyenv-activate
-# fi
-
-# Function to show virtual environment when desired
-case "$TERM" in
-eterm*)
-    export PS1_INIT='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    ;;
-*)
-    if [[ -z ${PS1_INIT:+x} ]]; then
-        export PS1_INIT=`echo "${PS1}"`
-    fi
-    ;;
-esac
-
-show_virtual_env() {
-  if [[ -n ${CONDA_DEFAULT_ENV} && ${CONDA_DEFAULT_ENV} == root ]]; then
-    if [[ -z ${PYENV_VERSION} ]]; then
-      echo ""
-    elif [[ -n ${PYENV_VERSION} ]]; then
-      echo "($(basename $PYENV_VERSION)) "
-    fi
-  elif [[ -n ${CONDA_DEFAULT_ENV} && ${CONDA_DEFAULT_ENV} != root ]]; then
-    echo "($(basename ${CONDA_DEFAULT_ENV})) "
-  elif [[ -z ${CONDA_DEFAULT_ENV} && -n ${CONDA_PREFIX} ]]; then
-    if [[ -n ${PYENV_VERSION} ]]; then
-      echo "($(basename $PYENV_VERSION)) "
-    elif [[ -z ${PYENV_VERSION} ]]; then
-      echo "($(basename $CONDA_PREFIX)) "
-    fi
-  elif [[ -z ${CONDA_DEFAULT_ENV} && -z ${CONDA_PREFIX} && -n ${PYENV_VERSION} ]]; then
-    echo "($(basename $PYENV_VERSION)) "
-  elif [[ -z ${CONDA_DEFAULT_ENV} && -z ${CONDA_PREFIX} && -z ${PYENV_VERSION} ]]; then
-    if [[ -n ${VIRTUAL_ENV} ]]; then
-      echo "($(basename $VIRTUAL_ENV)) "
-    fi
-  else
-    echo ""
-  fi
-}
-
-# Show Virtual Environment
-# PS1='$(show_virtual_env)'${PS1_INIT}
 
 # Start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
@@ -172,21 +101,8 @@ if [[ ${gnupg_SSH_AUTH_SOCK_by:-0} -ne $$ && -f $HOME/.gnupg/gpg-agent.conf ]]; 
   export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 fi
 
-# Ansible variables
-# if [[ -f $HOME/.local/etc/ansible/ansible.cfg ]]; then
-  # export ANSIBLE_CONFIG="$HOME/.local/etc/ansible/ansible.cfg"
-  # export ANSIBLE_HOME="`dirname ${ANSIBLE_CONFIG}`"
-# fi
-
 # Disable terminal scroll lock with C-s
 stty -ixon
-
-# RStudio
-if [[ -f /usr/bin/R ]]; then
-  export RSTUDIO_WHICH_R="/usr/bin/R"
-elif [[ -f $HOME/.anaconda3/bin/R ]]; then
-  export RSTUDIO_WHICH_R="${HOME}/.anaconda3/bin/R"
-fi
 
 # Perl5
 if [[ -d $HOME/.local/lib/perl5 ]]; then
