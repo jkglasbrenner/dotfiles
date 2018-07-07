@@ -17,7 +17,7 @@
     :defer t
     :init
     (progn
-      (setq conda-anaconda-home (concat (getenv "HOME") "/.anaconda3/"))
+      (setq conda-anaconda-home "/opt/miniconda/")
       )
     :config
     (progn
