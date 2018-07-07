@@ -40,21 +40,28 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ansible
+     (ansible :variables
+              ansible-auto-encrypt-decrypt t)
      auto-completion
      asciidoc
      better-defaults
      bibtex
      c-c++
+     (cmake :variables
+            cmake-enable-cmake-ide-support t)
      csv
      docker
      emacs-lisp
      ess
      finance
      git
+     gpu
+     helm
      html
      imenu-list
      javascript
+     (json :variables
+           js-indent-level 2)
      (latex :variables
             latex-build-command "LatexMk")
      major-modes
@@ -62,21 +69,34 @@ This function should only modify configuration layer settings."
      neotree
      (org :variables
           org-export-allow-bind-keywords t
-          org-enable-github-support t)
+          org-enable-github-support t
+          org-enable-bootstrap-support t
+          org-projectile-file "TODO.org")
      ;; pandoc
-     pdf-tools
-     python
+     pdf
+     perl5
+     (python :variables
+             python-backend 'lsp
+             python-test-runner 'pytest
+             python-enable-yapf-format-on-save t
+             python-sort-imports-on-save t)
+     restructuredtext
+     ruby
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
      shell-scripts
-     spell-checking
+     (spell-checking :variables
+                     enable-flyspell-auto-completion t)
+     sphinx
      sql
      syntax-checking
      systemd
      themes-megapack
+     vagrant
      version-control
      vimscript
+     xclipboard
      yaml
      ;; user-defined layers
      conda
@@ -96,7 +116,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(org-bullets)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
