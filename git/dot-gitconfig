@@ -5,7 +5,7 @@
 [core]
 	editor = emacsclient.sh
 [gpg]
-	program = /usr/bin/gpg2
+	program = /usr/bin/gpg
 [commit]
 	gpgsign = true
 [filter "lfs"]
@@ -22,7 +22,12 @@
 	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
+[mergetool "ediff"]
+	cmd = emacsclient -c -a \"\"  --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
 [mergetool "nbdime"]
 	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 [mergetool]
 	prompt = false
+[merge]
+	conflictstyle = diff3
+	tool = ediff
