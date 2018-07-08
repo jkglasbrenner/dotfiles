@@ -53,11 +53,14 @@ This function should only modify configuration layer settings."
      docker
      emacs-lisp
      ess
+     (evil-snipe :variables
+                 evil-snipe-enable-alternate-f-and-t-behaviors t)
      finance
      git
      gpu
      helm
      html
+     ibuffer
      imenu-list
      javascript
      (json :variables
@@ -94,7 +97,8 @@ This function should only modify configuration layer settings."
      systemd
      themes-megapack
      vagrant
-     version-control
+     (version-control :variables
+                      version-control-diff-tool 'git-gutter+)
      vimscript
      xclipboard
      yaml
