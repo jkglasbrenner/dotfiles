@@ -500,6 +500,7 @@ before packages are loaded."
    TeX-engine 'luatex
    tab-width 4
    evil-want-Y-yank-to-eol nil
+   ledger-post-amount-alignment-column 52
    ledger-reports '(("Budget and Joint Checking Balances" "%(binary) -f %(ledger-file) bal \"Assets:Joint Checking\" \"Budget\" \"Funds:Joint\" \"Assets:Reimbursements\"")
                     ("James Account Balance" "%(binary) -f %(ledger-file) bal \"Assets:James Checking\" \"James Savings\"")
                     ("Savings Account Balance" "%(binary) -f %(ledger-file) bal \"Assets:Savings\" \"Savings:\"")
