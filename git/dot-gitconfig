@@ -3,7 +3,7 @@
 	email = jglasbr2@gmu.edu
 	signingkey = 8AA3AEE0
 [core]
-	editor = emacsclient.sh
+	editor = emacsclient -c -a \"vim\"
 [gpg]
 	program = /usr/bin/gpg
 [commit]
