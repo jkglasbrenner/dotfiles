@@ -105,6 +105,7 @@ This function should only modify configuration layer settings."
      ;; user-defined layers
      conda
      configure-org
+     org-trello
      ox-ravel
      )
 
