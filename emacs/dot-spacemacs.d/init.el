@@ -501,16 +501,16 @@ before packages are loaded."
    tab-width 4
    evil-want-Y-yank-to-eol nil
    ledger-post-amount-alignment-column 52
-   ledger-reports '(("Budget and Joint Checking Balances" "%(binary) -f %(ledger-file) bal \"Assets:Joint Checking\" \"Budget\" \"Funds:Joint\" \"Assets:Reimbursements\"")
-                    ("James Account Balance" "%(binary) -f %(ledger-file) bal \"Assets:James Checking\" \"James Savings\"")
-                    ("Savings Account Balance" "%(binary) -f %(ledger-file) bal \"Assets:Savings\" \"Savings:\"")
+   ledger-reports '(("Budget and Joint Checking Balances" "%(binary) -f %(ledger-file) bal \"Assets:US:WF:Checking:Joint\" \"Budget\" \"Funds:Joint\"")
+                    ("James Account Balance" "%(binary) -f %(ledger-file) bal \"Assets:US:WF:Checking:James\" \"James Savings\"")
+                    ("Savings Account Balance" "%(binary) -f %(ledger-file) bal \"Assets:US:WF:Savings\" \"Savings:\"")
                     ("Liabilities Balances" "%(binary) -f %(ledger-file) bal \"Liabilities\"")
                     ("Real Balances Report" "%(binary) -f %(ledger-file) bal \"Assets\" --real")
                     ("Expenses Report" "%(binary) -f %(ledger-file) bal \"Expenses\"")
-                    ("Joint Checking Register" "%(binary) -f %(ledger-file) reg \"Assets:Joint Checking\" --real")
-                    ("Savings Register" "%(binary) -f %(ledger-file) reg \"Assets:Savings\" --real")
-                    ("Chase Visa Register" "%(binary) -f %(ledger-file) reg \"Liabilities:Visa:Chase\" --real")
-                    ("Wells Fargo Visa Register" "%(binary) -f %(ledger-file) reg \"Liabilities:Visa:Wells Fargo\" --real")
+                    ("Joint Checking Register" "%(binary) -f %(ledger-file) reg \"Assets:US:WF:Checking:Joint\" --real")
+                    ("Savings Register" "%(binary) -f %(ledger-file) reg \"Assets:US:WF:Savings\" --real")
+                    ("Chase Visa Register" "%(binary) -f %(ledger-file) reg \"Liabilities:US:Chase:CreditCard\" --real")
+                    ("Wells Fargo Visa Register" "%(binary) -f %(ledger-file) reg \"Liabilities:US:WF:CreditCard:James\" --real")
                     ("bal" "%(binary) -f %(ledger-file) bal")
                     ("reg" "%(binary) -f %(ledger-file) reg")
                     ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
