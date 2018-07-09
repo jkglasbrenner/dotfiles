@@ -121,9 +121,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# added by travis gem
+[ -f /home/jglasbr2/.travis/travis.sh ] && source /home/jglasbr2/.travis/travis.sh
+
 # direnv
 if command -v direnv >/dev/null 2>&1; then
   eval "$(direnv hook bash)"
 fi
-
 

@@ -1,0 +1,18 @@
+# .bash_local - Local settings for hostname latitude5590-jkg
+
+# Set SSH to use gpg-agent
+unset SSH_AGENT_PID
+if [[ ${gnupg_SSH_AUTH_SOCK_by:-0} -ne $$ && -f $HOME/.gnupg/gpg-agent.conf ]]; then
+  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+fi
+
+# Set GPG TTY
+export GPG_TTY=$(tty)
+
+# Refresh gpg-agent tty in case user switches into an X session
+if command -v gpg-connect-agent >/dev/null 2>&1; then
+  if [[ -f $HOME/.gnupg/gpg-agent.conf ]]; then
+    gpg-connect-agent updatestartuptty /bye >/dev/null
+  fi
+fi
+
