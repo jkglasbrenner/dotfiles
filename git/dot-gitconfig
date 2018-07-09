@@ -5,7 +5,7 @@
 [core]
 	editor = emacsclient -c -a \"vim\"
 [gpg]
-	program = /usr/bin/gpg
+	program = /usr/bin/gpg2
 [commit]
 	gpgsign = true
 [filter "lfs"]
