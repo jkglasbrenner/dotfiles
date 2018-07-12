@@ -9,7 +9,6 @@
 
 (defun spacemacs//set-variables-for-org-trello ()
   "Set variables for org-trello."
-  (setq org-trello-input-completion-mechanism 'helm)
-  )
+  (setq org-trello-input-completion-mechanism 'helm))
 
 ;;; funcs.el ends here
