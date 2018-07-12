@@ -78,11 +78,6 @@ This function should only modify configuration layer settings."
      ;; pandoc
      pdf
      perl5
-     (python :variables
-             python-backend 'lsp
-             python-test-runner 'pytest
-             python-enable-yapf-format-on-save t
-             python-sort-imports-on-save t)
      restructuredtext
      ruby
      (shell :variables
@@ -105,6 +100,8 @@ This function should only modify configuration layer settings."
      ;; user-defined layers
      conda
      configure-org
+     (elpy :variables
+           python-enable-yapf-format-on-save t)
      org-trello
      ox-ravel
      )
@@ -489,6 +486,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (setenv "WORKON_HOME" "/home/jglasbr2/.conda/envs")
   )
 
 (defun dotspacemacs/user-config ()
