@@ -52,7 +52,23 @@ This function should only modify configuration layer settings."
      csv
      docker
      emacs-lisp
-     ess
+     (ess :variables
+          ess-default-style 'RStudio
+          ess-indent-with-fancy-comments nil
+          ess-R-font-lock-keywords (quote
+                                    ((ess-R-fl-keyword:modifiers . t)
+                                     (ess-R-fl-keyword:fun-defs . t)
+                                     (ess-R-fl-keyword:keywords . t)
+                                     (ess-R-fl-keyword:assign-ops . t)
+                                     (ess-R-fl-keyword:constants . t)
+                                     (ess-fl-keyword:fun-calls . t)
+                                     (ess-fl-keyword:numbers . t)
+                                     (ess-fl-keyword:operators . t)
+                                     (ess-fl-keyword:delimiters . t)
+                                     (ess-fl-keyword:matrix-labels . t)
+                                     (ess-fl-keyword:= . t)
+                                     (ess-R-fl-keyword:F&T . t)
+                                     (ess-R-fl-keyword:%op% . t))))
      (evil-snipe :variables
                  evil-snipe-enable-alternate-f-and-t-behaviors t)
      finance
@@ -104,6 +120,7 @@ This function should only modify configuration layer settings."
            python-enable-yapf-format-on-save t)
      org-trello
      ox-ravel
+     polymode
      )
 
    ;; List of additional packages that will be installed without being
@@ -514,7 +531,8 @@ before packages are loaded."
                     ("reg" "%(binary) -f %(ledger-file) reg")
                     ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
                     ("account" "%(binary) -f %(ledger-file) reg %(account)")))
-  (add-hook 'doc-view-mode-hook 'auto-revert-mode))
+  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+  (add-hook 'ess-mode-hook (lambda () (ess-toggle-underscore nil))))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
