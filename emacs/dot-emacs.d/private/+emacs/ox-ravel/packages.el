@@ -14,8 +14,7 @@
 ;;; Code:
 
 (setq ox-ravel-packages
-      '((org :location built-in)
-        (ox-ravel :location local)))
+      '((ox-ravel :location local)))
 
 (defun ox-ravel/init-ox-ravel ()
   (spacemacs|use-package-add-hook org :post-config (require 'ox-ravel)))

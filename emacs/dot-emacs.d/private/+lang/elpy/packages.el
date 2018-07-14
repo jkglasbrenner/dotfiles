@@ -18,11 +18,11 @@
         org
         yapfify))
 
-(defun python/pre-init-org ()
+(defun elpy/pre-init-org ()
   (spacemacs|use-package-add-hook org
     :post-config (add-to-list 'org-babel-load-languages '(python . t))))
 
-(defun python/init-yapfify ()
+(defun elpy/init-yapfify ()
   (use-package yapfify
     :defer t
     :init

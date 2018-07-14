@@ -14,8 +14,7 @@
 ;;; Code:
 
 (setq polymode-packages
-      '(ess
-        (polymode (recipe :fetcher github
+      '((polymode (recipe :fetcher github
                           :repo "vspinu/polymode"
                           :branch "next"))))
 
