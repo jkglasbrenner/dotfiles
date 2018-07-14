@@ -67,8 +67,7 @@ This function should only modify configuration layer settings."
                                      (ess-fl-keyword:delimiters . t)
                                      (ess-fl-keyword:matrix-labels . t)
                                      (ess-fl-keyword:= . t)
-                                     (ess-R-fl-keyword:F&T . t)
-                                     (ess-R-fl-keyword:%op% . t))))
+                                     (ess-R-fl-keyword:F&T . t))))
      (evil-snipe :variables
                  evil-snipe-enable-alternate-f-and-t-behaviors t)
      finance
