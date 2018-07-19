@@ -50,6 +50,9 @@ This function should only modify configuration layer settings."
      (cmake :variables
             cmake-enable-cmake-ide-support t)
      csv
+     (deft :variables
+       deft-extensions '("org" "md" "txt")
+       deft-directory (concat user-home-directory "Documents/" "notes"))
      docker
      emacs-lisp
      (ess :variables
