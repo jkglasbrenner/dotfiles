@@ -505,7 +505,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setenv "WORKON_HOME" "/home/jglasbr2/.conda/envs")
+  (setenv "WORKON_HOME" (concat user-home-directory ".conda/" "envs"))
   )
 
 (defun dotspacemacs/user-config ()
