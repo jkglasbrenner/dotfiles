@@ -119,6 +119,7 @@ This function should only modify configuration layer settings."
      ;; user-defined layers
      conda
      configure-org
+     direnv
      (elpy :variables
            python-enable-yapf-format-on-save t)
      org-trello
@@ -541,6 +542,7 @@ Source: http://www.cs.au.dk/~abizjak/emacs/2016/03/06/latex-fill-paragraph.html"
                 ))))
       ;; otherwise do ordinary fill paragraph
       (fill-paragraph P)))
+  (spacemacs/toggle-direnv-active)
   (spacemacs/set-leader-keys "xQ" 'ales/fill-paragraph)
   (spacemacs/set-leader-keys "xq" 'unfill-toggle)
   (setq
