@@ -544,7 +544,27 @@ Source: http://www.cs.au.dk/~abizjak/emacs/2016/03/06/latex-fill-paragraph.html"
   (spacemacs/toggle-direnv-active)
   (spacemacs/set-leader-keys "xQ" 'ales/fill-paragraph)
   (spacemacs/set-leader-keys "xq" 'unfill-toggle)
+  (defadvice projectile-on (around exlude-tramp activate)
+    "This should disable projectile when visiting a remote file"
+    (unless  (--any? (and it (file-remote-p it))
+                     (list
+                      (buffer-file-name)
+                      list-buffers-directory
+                      default-directory
+                      dired-directory))
+      ad-do-it))
+  (defadvice projectile-project-root (around ignore-remote first activate)
+    (unless (file-remote-p default-directory) ad-do-it))
   (setq
+   vc-ignore-dir-regexp (format "\\(%s\\)\\|\\(%s\\)"
+                                vc-ignore-dir-regexp
+                                tramp-file-name-regexp)
+   tramp-verbose 1
+   projectile-mode-line "Projectile"
+   tramp-default-method "ssh"
+   tramp-use-ssh-controlmaster-options nil
+   tramp-completion-reread-directory-timeout nil
+   remote-file-name-inhibit-cache nil
    TeX-engine 'luatex
    tab-width 4
    evil-want-Y-yank-to-eol nil
