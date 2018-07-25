@@ -103,8 +103,7 @@ This function should only modify configuration layer settings."
             shell-default-height 30
             shell-default-position 'bottom)
      shell-scripts
-     (spell-checking :variables
-                     enable-flyspell-auto-completion t)
+     spell-checking
      sphinx
      sql
      syntax-checking
