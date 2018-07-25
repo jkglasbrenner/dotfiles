@@ -1,15 +1,21 @@
-use_python() {
-  local python_root=$HOME/.pyenv/versions/$1
-  load_prefix "$python_root"
-  if [[ -x "$python_root/bin/python3" ]]; then
-    layout python3 "$python_root/bin/python3"
+layout_conda() {
+	source /etc/profile.d/conda.sh
+
+  if [ -n "$1" ]; then
+    # Explicit environment name from layout command.
+    local env_name="$1"
+    echo Activating conda environment ${env_name}
+    conda activate ${env_name}
+
+  elif (grep -q name: environment.y[a]ml); then
+    # Detect environment name from `environment.y[a]ml` file in `.envrc` directory
+    local env_name="`grep name: environment.y[a]ml | sed -e 's/name: //' | cut -d "'" -f 2 | cut -d '"' -f 2`"
+    echo Activating conda environment ${env_name}
+    conda activate ${env_name}
+
   else
-    layout python "$python_root/bin/python"
-  fi
-}
+    (>&2 echo No environment specified);
+    exit 1;
 
-layout_virtualenv() {
-  local venv_path="$HOME/.pyenv/shims"
-  source ${venv_path}/activate $1
+  fi;
 }
-
