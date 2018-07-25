@@ -52,6 +52,7 @@ This function should only modify configuration layer settings."
      csv
      (deft :variables
        deft-extensions '("org" "md" "txt")
+       deft-default-extension "md"
        deft-directory (concat user-home-directory "Documents/" "notes"))
      docker
      emacs-lisp
