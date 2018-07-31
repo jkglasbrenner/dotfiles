@@ -100,6 +100,7 @@ This function should only modify configuration layer settings."
      restructuredtext
      ruby
      (shell :variables
+            sh-basic-offset 2
             shell-default-height 30
             shell-default-position 'bottom)
      shell-scripts
