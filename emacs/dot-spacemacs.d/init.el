@@ -33,8 +33,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     ;; ----------------------------------------------------------------
+   '(;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
@@ -97,6 +96,7 @@ This function should only modify configuration layer settings."
      ;; pandoc
      pdf
      perl5
+     ;; python
      restructuredtext
      ruby
      (shell :variables
@@ -555,6 +555,10 @@ Source: http://www.cs.au.dk/~abizjak/emacs/2016/03/06/latex-fill-paragraph.html"
       ad-do-it))
   (defadvice projectile-project-root (around ignore-remote first activate)
     (unless (file-remote-p default-directory) ad-do-it))
+  (defun spacemacs//configure-makefile-mode ()
+    "Customize variables for makefile mode."
+    (setq tab-width 4
+          makefile-backslash-column 80))
   (setq
    vc-ignore-dir-regexp (format "\\(%s\\)\\|\\(%s\\)"
                                 vc-ignore-dir-regexp
@@ -566,7 +570,6 @@ Source: http://www.cs.au.dk/~abizjak/emacs/2016/03/06/latex-fill-paragraph.html"
    tramp-completion-reread-directory-timeout nil
    remote-file-name-inhibit-cache nil
    TeX-engine 'luatex
-   tab-width 4
    evil-want-Y-yank-to-eol nil
    ledger-post-amount-alignment-column 52
    ledger-reports '(("Budget and Joint Checking Balances" "%(binary) -f %(ledger-file) bal \"Assets:US:WF:Checking:Joint\" \"Budget\" \"Funds:Joint\"")
@@ -583,6 +586,7 @@ Source: http://www.cs.au.dk/~abizjak/emacs/2016/03/06/latex-fill-paragraph.html"
                     ("reg" "%(binary) -f %(ledger-file) reg")
                     ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
                     ("account" "%(binary) -f %(ledger-file) reg %(account)")))
+  (add-hook 'makefile-mode-hook 'spacemacs//configure-makefile-mode)
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
   (add-hook 'ess-mode-hook (lambda () (ess-toggle-underscore nil))))
 
