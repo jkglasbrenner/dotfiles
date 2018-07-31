@@ -187,12 +187,12 @@ c.NotebookApp.enable_mathjax = True
 #c.NotebookApp.logout_handler_class = 'notebook.auth.logout.LogoutHandler'
 
 ## The MathJax.js configuration file that is to be used.
-c.NotebookApp.mathjax_config = 'TeX-AMS_CHTML-full,Safe'
-#c.NotebookApp.mathjax_config = 'TeX-AMS-MML_HTMLorMML-full,Safe'
+#c.NotebookApp.mathjax_config = 'TeX-AMS_CHTML-full,Safe'
+c.NotebookApp.mathjax_config = 'TeX-MML-AM_CHTML'
 
 ## A custom url for MathJax.js. Should be in the form of a case-sensitive url to
 #  MathJax, for example:  /static/components/MathJax/MathJax.js
-# c.NotebookApp.mathjax_url = 'https://gitlab.datamaterials.group/mathjax/MathJax.js'
+c.NotebookApp.mathjax_url = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js'
 
 ## Dict of Python modules to load as notebook server extensions.Entry values can
 #  be used to enable and disable the loading ofthe extensions. The extensions
