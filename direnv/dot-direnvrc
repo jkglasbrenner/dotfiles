@@ -7,9 +7,9 @@ layout_conda() {
     echo Activating conda environment ${env_name}
     conda activate ${env_name}
 
-  elif (grep -q name: environment.y[a]ml); then
-    # Detect environment name from `environment.y[a]ml` file in `.envrc` directory
-    local env_name="`grep name: environment.y[a]ml | sed -e 's/name: //' | cut -d "'" -f 2 | cut -d '"' -f 2`"
+  elif (grep -q name: environment.y*l); then
+    # Detect environment name from `environment.y*l` file in `.envrc` directory
+    local env_name="`grep name: environment.y*l | sed -e 's/name: //' | cut -d "'" -f 2 | cut -d '"' -f 2`"
     echo Activating conda environment ${env_name}
     conda activate ${env_name}
 
