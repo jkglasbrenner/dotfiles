@@ -7,7 +7,7 @@
 [gpg]
 	program = /usr/bin/gpg2
 [commit]
-	gpgsign = true
+	gpgsign = false
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
