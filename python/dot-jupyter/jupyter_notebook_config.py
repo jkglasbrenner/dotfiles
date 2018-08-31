@@ -1,5 +1,7 @@
 # Configuration file for jupyter-notebook.
 
+from pathlib import Path
+
 #------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration
 #------------------------------------------------------------------------------
@@ -216,6 +218,12 @@ c.NotebookApp.open_browser = False
 #  
 #  The string should be of the form type:salt:hashed-password.
 c.NotebookApp.password = 'sha1:1bbf92cc8354:f79d3d0e14ec274bb0c76689f5a206097237328d'
+
+github_path_loc = Path().home() / ".config/GitHub/github_pat.txt"
+with github_path_loc.open() as infile:
+    local_github_token = infile.read()
+
+c.GitHubConfig.access_token = local_github_token.strip()
 
 ## Forces users to use a password for the Notebook server. This is useful in a
 #  multi user environment, for instance when everybody in the LAN can access each

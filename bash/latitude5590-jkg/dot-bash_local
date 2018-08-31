@@ -16,3 +16,5 @@ if command -v gpg-connect-agent >/dev/null 2>&1; then
   fi
 fi
 
+# Source Citrination
+. $HOME/.config/Citrination/api_key

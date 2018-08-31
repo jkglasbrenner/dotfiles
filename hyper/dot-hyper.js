@@ -45,6 +45,10 @@ module.exports = {
     // border color (window, tabs)
     borderColor: '#333',
 
+    hypercwd: {
+      initialWorkingDirectory: '~/',
+    },
+
     // custom CSS to embed in the main window
     css: `
     .terms_19b1ydh {
@@ -146,16 +150,21 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
+  //
+  //  Currently disabled
+  // 'hyper-markdown-preview',
+  // 'hyper-statusline',
+  // 'hyper-one-light',
   plugins: [
-    'hyper-statusline',
     'hypercwd',
     'hyper-tab-icons',
     'hyper-search',
     'hyper-font-smoothing',
     'hyper-alt-click',
-    // 'hyper-markdown-preview',
-    // 'hyper-one-light',
-    'hyper-zenburn',
+    "hyper-night-owl",
+    // "hyperpower",
+    // "hyper-oceanic-next",
+    // 'hyper-zenburn',
   ],
 
   // in development, you can create a directory under
@@ -166,12 +175,7 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-  },
-
-  // add the hypercwd configuration object like this
-  hypercwd: {
-    initialWorkingDirectory: '~/',
-  },
+  }
 
 //   hyperMarkdownPreview: {
 //     stylesheet: 'github' // github | none
