@@ -92,6 +92,8 @@ This function should only modify configuration layer settings."
           org-export-allow-bind-keywords t
           org-enable-github-support t
           org-enable-bootstrap-support t
+          org-enable-trello-support t
+          org-trello-input-completion-mechanism 'helm
           org-projectile-file "TODO.org")
      ;; pandoc
      pdf
@@ -122,7 +124,7 @@ This function should only modify configuration layer settings."
      direnv
      (elpy :variables
            python-enable-yapf-format-on-save t)
-     org-trello
+     ;; org-trello
      ox-ravel
      polymode
      )
