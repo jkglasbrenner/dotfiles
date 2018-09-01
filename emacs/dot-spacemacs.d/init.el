@@ -136,7 +136,8 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(yasnippet-snippets)
+   dotspacemacs-additional-packages '(yasnippet-snippets
+                                      night-owl-theme)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -242,7 +243,7 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(zenburn professional)
+   dotspacemacs-themes '(night-owl zenburn professional)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `vim-powerline' and `vanilla'. The first three
@@ -562,6 +563,22 @@ Source: http://www.cs.au.dk/~abizjak/emacs/2016/03/06/latex-fill-paragraph.html"
     "Customize variables for makefile mode."
     (setq tab-width 4
           makefile-backslash-column 80))
+
+  (defun night-owl-set-evil-cursor (state color shape)
+    (set (intern (format "evil-%s-state-cursor" state))
+         (list color shape)))
+
+  (defun night-owl-update-evil-cursors ()
+    (let ((current-theme (symbol-name (car custom-enabled-themes))))
+      (if (string-prefix-p "night-owl" current-theme)
+          (cl-loop for (state color style) in night-owl-evil-cursors
+                   do
+                   (night-owl-set-evil-cursor state (symbol-value color) style))
+        ;; not night-owl theme, restore default spacemacs cursors
+        (if (functionp 'spacemacs/add-evil-cursor)
+            (cl-loop for (state color shape) in spacemacs-evil-cursors
+                     do (spacemacs/add-evil-cursor state color shape))))))
+
   (setq
    vc-ignore-dir-regexp (format "\\(%s\\)\\|\\(%s\\)"
                                 vc-ignore-dir-regexp
@@ -588,10 +605,24 @@ Source: http://www.cs.au.dk/~abizjak/emacs/2016/03/06/latex-fill-paragraph.html"
                     ("bal" "%(binary) -f %(ledger-file) bal")
                     ("reg" "%(binary) -f %(ledger-file) reg")
                     ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
-                    ("account" "%(binary) -f %(ledger-file) reg %(account)")))
+                    ("account" "%(binary) -f %(ledger-file) reg %(account)"))
+   night-owl-evil-cursors
+   '(("normal" night-owl-orange box)
+     ("insert" night-owl-cursor (bar . 2))
+     ("emacs" night-owl-cursor (bar . 2))
+     ("hybrid" night-owl-cursor (bar . 2))
+     ("replace" night-owl-gray (hbar . 2))
+     ("evilified" night-owl-yellow box)
+     ("visual" night-owl-gray (hbar . 2))
+     ("motion" night-owl-violet box)
+     ("lisp" night-owl-red box)
+     ("iedit" night-owl-magenta box)
+     ("iedit-insert" night-owl-magenta (bar . 2))))
   (add-hook 'makefile-mode-hook 'spacemacs//configure-makefile-mode)
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
-  (add-hook 'ess-mode-hook (lambda () (ess-toggle-underscore nil))))
+  (add-hook 'ess-mode-hook (lambda () (ess-toggle-underscore nil)))
+  (add-hook 'after-init-hook #'night-owl-update-evil-cursors)
+  (add-hook 'spacemacs-post-theme-change-hook #'night-owl-update-evil-cursors))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
