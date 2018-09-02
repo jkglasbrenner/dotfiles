@@ -25,6 +25,10 @@ set ttimeoutlen=10
 set t_Co=256
 set guifont=Hack\ 11
 
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 if has('autocmd')
   autocmd FileType python,make,mkd,rmd set shiftwidth=4
   autocmd FileType python,make,mkd,rmd set softtabstop=4
@@ -32,7 +36,8 @@ if has('autocmd')
   autocmd FileType html,xml set listchars+=tab:\ \ 
 endif
 
-colors zenburn
+syntax enable
+colorscheme night-owl
 
 nnoremap ; :
 nnoremap <esc> :noh<return><esc>
