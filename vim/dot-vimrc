@@ -23,6 +23,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set pastetoggle=<F2>
 set ttimeoutlen=10
 set t_Co=256
+set guifont=Hack\ 11
 
 if has('autocmd')
   autocmd FileType python,make,mkd,rmd set shiftwidth=4
