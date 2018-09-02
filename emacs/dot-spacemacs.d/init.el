@@ -510,7 +510,15 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (defun reset-default-font ()
+    (unless (spacemacs/set-default-font dotspacemacs-default-font)
+      (spacemacs-buffer/warning
+       "Cannot find any of the specified fonts (%s)! Font settings may not be correct."
+       (mapconcat 'car dotspacemacs-default-font ", ")))
+    (remove-hook 'focus-in-hook #'reset-default-font))
+
   (setenv "WORKON_HOME" (concat user-home-directory ".conda/" "envs"))
+  (add-hook 'focus-in-hook #'reset-default-font)
   )
 
 (defun dotspacemacs/user-config ()
