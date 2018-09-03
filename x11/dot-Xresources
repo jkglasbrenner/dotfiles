@@ -1,0 +1,17 @@
+! font
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.rgba:       rgb
+
+! URxvt settings
+URxvt.depth: 32
+URxvt.font: xft:Hack:pixelsize=12:antialias=true:hinting=true
+URxvt*letterSpace: -1
+
+URxvt*scrollBar: true
+URxvt*scrollBar_right: true
+URxvt*scrollBar_floating: true
+URxvt*scrollstyle: plain
+URxvt*saveLines: 10000
