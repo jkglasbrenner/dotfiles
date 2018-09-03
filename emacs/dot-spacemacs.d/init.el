@@ -588,6 +588,8 @@ Source: http://www.cs.au.dk/~abizjak/emacs/2016/03/06/latex-fill-paragraph.html"
             (cl-loop for (state color shape) in spacemacs-evil-cursors
                      do (spacemacs/add-evil-cursor state color shape))))))
 
+  (load (concat user-emacs-directory "private/" "local/" "dupwords.el"))
+
   (setq
    vc-ignore-dir-regexp (format "\\(%s\\)\\|\\(%s\\)"
                                 vc-ignore-dir-regexp
