@@ -138,6 +138,7 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(yasnippet-snippets
                                       writegood-mode
+                                      org-noter
                                       night-owl-theme)
 
    ;; A list of packages that cannot be updated.
@@ -600,6 +601,7 @@ Source: http://www.cs.au.dk/~abizjak/emacs/2016/03/06/latex-fill-paragraph.html"
    tramp-use-ssh-controlmaster-options nil
    tramp-completion-reread-directory-timeout nil
    remote-file-name-inhibit-cache nil
+   org-noter-separate-notes-from-heading t
    TeX-engine 'luatex
    evil-want-Y-yank-to-eol nil
    ledger-post-amount-alignment-column 52

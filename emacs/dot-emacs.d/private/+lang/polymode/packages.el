@@ -14,24 +14,17 @@
 ;;; Code:
 
 (setq polymode-packages
-      '((polymode (recipe :fetcher github
-                          :repo "vspinu/polymode"
-                          :branch "next"))))
+      '(poly-markdown
+        poly-R))
 
-(defun polymode/init-polymode ()
-  (use-package polymode
-    :defer t
-    :mode (("\\.Snw$" . poly-noweb+r-mode)
-           ("\\.Rnw$" . poly-noweb+r-mode)
-           ("\\.Rmd$" . poly-markdown+r-mode)
-           ("\\.rapport$" . poly-rapport-mode)
-           ("\\.Rhtml$" . poly-html+r-mode)
-           ("\\.Rbrew$" . poly-brew+r-mode)
-           ("\\.Rcpp$" . poly-r+c++-mode)
-           ("\\.cppR$" . poly-c++r-mode)
-           ("\\.py\\'" . python-mode))
-    :config
-    (progn
-      (spacemacs//set-variables-for-polymode))))
+(defun polymode/init-poly-markdown ()
+  (use-package poly-markdown
+    :mode (("\\.Rmd$" . poly-markdown-mode)
+           ("\\.md$" . poly-markdown-mode))
+    :defer t))
+
+(defun polymode/init-poly-R ()
+  (use-package poly-R
+    :defer t))
 
 ;;; packages.el ends here
