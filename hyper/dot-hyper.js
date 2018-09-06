@@ -162,6 +162,7 @@ module.exports = {
     'hyper-font-smoothing',
     'hyper-alt-click',
     "hyper-night-owl",
+    // "hyper-one-light",
     // "hyperpower",
     // "hyper-oceanic-next",
     // 'hyper-zenburn',
