@@ -116,6 +116,7 @@ This function should only modify configuration layer settings."
      (version-control :variables
                       version-control-diff-tool 'git-gutter+)
      vimscript
+     windows-scripts
      xclipboard
      yaml
      ;; user-defined layers
@@ -460,7 +461,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server nil
+   dotspacemacs-persistent-server t
 
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.

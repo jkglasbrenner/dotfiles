@@ -52,16 +52,13 @@ module.exports = {
     // custom CSS to embed in the main window
     css: `
     .terms_19b1ydh {
-      margin-top: 20px;
-    }
-    .header_windowHeader {
-      display: none;
+      margin-top: 40px;
     }
     .tabs_nav {
       top: 0;
     }
     .terms_terms {
-      margin-top: 10px;
+      margin-top: 40px;
     }
     .terms_termsShifted {
       margin-top: 40px;
