@@ -1,4 +1,5 @@
 {"editor.fontSize": 16,
     "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "workbench.colorTheme": "Night Owl"
+    "workbench.colorTheme": "Night Owl",
+    "python.jediEnabled": true
 }

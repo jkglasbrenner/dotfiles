@@ -4,3 +4,4 @@ channels:
 show_channel_urls: true
 changeps1: true
 ssl_verify: true
+anaconda_upload: true
