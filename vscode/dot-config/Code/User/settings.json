@@ -1,12 +1,71 @@
 {
+    "breadcrumbs.enabled": true,
     "editor.fontSize": 16,
     "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.useExperimentalFileWatcher": true,
     "workbench.colorTheme": "Night Owl",
+    "window.titleBarStyle": "custom",
     "python.linting.flake8Enabled": true,
+    "window.menuBarVisibility": "toggle",
     "python.linting.pydocstyleEnabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.pylintUseMinimalCheckers": false,
     "python.formatting.provider": "yapf",
     "editor.cursorBlinking": "phase",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.dragAndDrop": false,
+    "editor.smoothScrolling": true,
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [{
+        "before": ["f", "d"],
+        "after": ["<Esc>"]
+    }],
+    "vim.normalModeKeyBindingsNonRecursive": [{
+            "before": ["<leader>", "d"],
+            "after": ["d", "d"]
+        },
+        {
+            "before": ["<C-n>"],
+            "commands": [":nohl"]
+        },
+        {
+            "before": ["leader", "w"],
+            "commands": [
+                "workbench.action.files.save",
+            ]
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [{
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ],
+    "vim.leader": "<space>",
+    "vim.statusBarColorControl": true,
+    "searchRipgrep.enable": true,
+    "search.useRipgrep": true,
+    "vsicons.dontShowNewVersionMessage": true
 }
