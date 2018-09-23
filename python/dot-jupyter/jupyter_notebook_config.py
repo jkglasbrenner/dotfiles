@@ -612,3 +612,10 @@ c.GitHubConfig.access_token = local_github_token.strip()
 #  
 #  By default, all installed kernels are allowed.
 #c.KernelSpecManager.whitelist = set()
+
+#------------------------------------------------------------------------------
+# JupyterLab Extensions configuration
+#------------------------------------------------------------------------------
+
+## Template directories
+# c.JupyterLabTemplates.template_dirs = ['list', 'of', 'template', 'directories']
