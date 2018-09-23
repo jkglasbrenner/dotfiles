@@ -1,0 +1,5 @@
+default_context:
+  full_name: "James K. Glasbrenner"
+  email: "jglasbr2@gmu.edu"
+  github_username: "jkglasbrenner"
+cookiecutters_dir: "~/.cookiecutters/"
