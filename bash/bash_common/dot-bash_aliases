@@ -101,9 +101,9 @@ export GIT_LFS_SKIP_SMUDGE=1
 
 export DOCKER_ID_USER="jkglasbrenner"
 
-if [[ -d ${HOME}/.jupyter/lab ]]; then
-  export JUPYTERLAB_DIR="${HOME}/.jupyter/lab"
-fi
+# if [[ -d ${HOME}/.jupyter/lab ]]; then
+#   export JUPYTERLAB_DIR="${HOME}/.jupyter/lab"
+# fi
 
 # Source host-specific settings
 if [[ -f $HOME/.bash_local ]]; then
