@@ -25,6 +25,10 @@ set ttimeoutlen=10
 set t_Co=256
 set guifont=Hack\ 11
 
+if isdirectory("~/.fzf")
+  set rtp+=~/.fzf
+endif
+
 if (has("termguicolors"))
  set termguicolors
 endif
