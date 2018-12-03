@@ -73,4 +73,6 @@
     "gitlens.hovers.currentLine.over": "line",
     "python.jediEnabled": false,
     "autoDocstring.docstringFormat": "sphinx",
+    "git.autofetch": true,
+    "git.enableCommitSigning": true,
 }
