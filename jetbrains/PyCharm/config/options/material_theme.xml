@@ -3,13 +3,12 @@
     <option name="compactDropdowns" value="true" />
     <option name="isCompactStatusBar" value="true" />
     <option name="isCompactTables" value="true" />
-    <option name="isHighContrast" value="true" />
     <option name="isWizardShown" value="true" />
     <option name="overrideAccentColor" value="true" />
     <option name="accentColor" value="ff1675" />
     <option name="highlightColor" value="80cbc4" />
     <option name="selectedTheme" value="nightowl" />
     <option name="userId" value="-2bba96b9:164fe2ff9be:-8000" />
-    <option name="version" value="3.0.0-rc3" />
+    <option name="version" value="3.0.0-rc4" />
   </component>
 </application>

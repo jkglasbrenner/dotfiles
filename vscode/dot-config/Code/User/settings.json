@@ -1,4 +1,5 @@
 {
+
     "breadcrumbs.enabled": true,
     "editor.fontSize": 16,
     "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
@@ -12,7 +13,8 @@
     "python.linting.pydocstyleEnabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.pylintUseMinimalCheckers": false,
-    "python.formatting.provider": "yapf",
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": "--py36",
     "editor.cursorBlinking": "phase",
     "editor.formatOnSave": true,
     "editor.dragAndDrop": false,
@@ -75,4 +77,11 @@
     "autoDocstring.docstringFormat": "sphinx",
     "git.autofetch": true,
     "git.enableCommitSigning": true,
+    "revealjs.highlightTheme": "Default",
+    "revealjs.theme": "white",
+    "[json]": {
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
 }
