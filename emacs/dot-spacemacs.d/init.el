@@ -52,7 +52,7 @@ This function should only modify configuration layer settings."
      (deft :variables
        deft-extensions '("org" "md" "txt")
        deft-default-extension "md"
-       deft-directory (concat user-home-directory "Documents/" "notes"))
+       deft-directory (concat user-home-directory "Documents/" "Notable" "notes"))
      docker
      emacs-lisp
      (ess :variables
