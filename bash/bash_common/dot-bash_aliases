@@ -77,6 +77,9 @@ fi
 if [[ -d ${HOME}/.anaconda3/etc/profile.d ]]; then
   . ${HOME}/.anaconda3/etc/profile.d/conda.sh
 fi
+if [[ -d ${HOME}/.cargo/bin ]]; then
+  pathmunge ${HOME}/.cargo/bin
+fi
 
 # Disable terminal scroll lock with C-s
 stty -ixon

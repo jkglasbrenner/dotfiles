@@ -20,5 +20,5 @@ fi
 . $HOME/.config/Citrination/api_key
 
 if [[ -d ${HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin ]]; then
-  pathmunge /home/jglasbr2/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/
+  pathmunge ${HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/
 fi
