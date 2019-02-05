@@ -45,8 +45,7 @@
     scrollToCursor: true
     triggerOnSave: true
   "atom-ide-ui":
-    use:
-      "atom-ide-diagnostics-ui": false
+    use: {}
   "atom-package-sync":
     syncSettings: false
   "atom-ternjs":
@@ -57,6 +56,7 @@
     excludedPackages: [
       "code-peek"
     ]
+  "autocomplete-clang": {}
   "autocomplete-python":
     useKite: false
   build:
@@ -68,21 +68,24 @@
   core:
     disabledPackages: [
       "language-gfm"
-      "language-python"
-      "atom-ide-ui"
-      "ide-python"
       "linter-pylint"
       "linter-flake8"
       "markdown-preview-plus-opener"
       "linter-pydocstyle"
       "wrap-guide"
       "markdown-writer"
+      "linter"
+      "MagicPython"
+      "autocomplete-python"
+      "python-indent"
+      "python-tools"
+      "ide-c-cpp"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
-      "afterglow-plus"
+      "seti-ui"
+      "midnight-owl-syntax"
     ]
   editor:
     fontFamily: "Hack"
@@ -95,6 +98,7 @@
     tabLength: 4
   "exception-reporting":
     userId: "a9970b71-c592-4094-a1ca-5774c7ea9f09"
+  "ide-fortran": {}
   "language-markdown":
     addListItems: false
   "linter-markdown":
@@ -114,9 +118,9 @@
     useIsort: true
   "linter-ui-default":
     decorateOnTreeView: "Files and Directories"
-    showPanel: true
+  "markdown-preview":
+    useGitHubStyle: true
   "markdown-preview-plus":
-    enablePandoc: true
     grammars: [
       "source.gfm"
       "source.litcoffee"
@@ -126,15 +130,18 @@
       "text.plain"
       "text.plain.null-grammar"
     ]
-    pandocArguments: [
-      "--mathjax"
-      "--smart"
-      "--no-highlight"
-    ]
-    pandocBibliography: true
-    pandocMarkdownFlavor: "markdown+tex_math_single_backslash+multiline_tables+autolink_bare_uris+ascii_identifiers-implicit_figures"
-    useLazyHeaders: false
-    useNativePandocCodeStyles: true
+    markdownItConfig:
+      useLazyHeaders: false
+    pandocConfig:
+      pandocArguments: [
+        "--mathjax"
+        "--smart"
+        "--no-highlight"
+      ]
+      pandocBibliography: true
+      pandocMarkdownFlavor: "markdown+tex_math_single_backslash+multiline_tables+autolink_bare_uris+ascii_identifiers-implicit_figures"
+      useNativePandocCodeStyles: true
+    renderer: "pandoc"
   minimap:
     plugins:
       "highlight-selected": true
@@ -163,6 +170,8 @@
     includeGitRepositories: true
     savePathsRelativeToHome: true
     sortBy: "group"
+  "seti-ui":
+    compactView: true
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
@@ -180,6 +189,12 @@
     tabLength: 2
     tabType: "soft"
 ".basic.html.text":
+  editor:
+    tabLength: 2
+".c.source":
+  editor:
+    tabLength: 2
+".cpp.source":
   editor:
     tabLength: 2
 ".css.source.styled":
