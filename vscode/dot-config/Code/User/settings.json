@@ -1,5 +1,4 @@
 {
-
     "breadcrumbs.enabled": true,
     "editor.fontSize": 16,
     "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
@@ -81,7 +80,11 @@
     "revealjs.theme": "white",
     "[json]": {
         "editor.detectIndentation": false,
-        "editor.tabSize": 2,
         "editor.insertSpaces": true
     },
+    "window.zoomLevel": 0,
+    "editor.suggest.localityBonus": true,
+    "editor.snippetSuggestions": "bottom",
+    "vscode_custom_css.imports": ["file:///usr/local/share/code/vscode-custom.css"],
+    "vscode_custom_css.policy": true
 }
