@@ -22,3 +22,9 @@ fi
 if [[ -d ${HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin ]]; then
   pathmunge ${HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/
 fi
+
+# Spack
+if [[ -d ${HOME}/.local/spack ]]; then
+  export SPACK_ROOT=${HOME}/.local/spack
+  . ${SPACK_ROOT}/share/spack/setup-env.sh
+fi
