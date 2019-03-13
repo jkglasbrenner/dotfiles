@@ -50,3 +50,9 @@ function _aiida_verdi_completion {
 }
 complete -o nospace -F _aiida_verdi_completion verdi
 
+# Spack
+if [[ -d ${HOME}/.local/spack ]]; then
+  export SPACK_ROOT=${HOME}/.local/spack
+  . ${SPACK_ROOT}/share/spack/setup-env.sh
+fi
+
