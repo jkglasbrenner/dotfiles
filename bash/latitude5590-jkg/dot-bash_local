@@ -28,3 +28,8 @@ if [[ -d ${HOME}/.local/spack ]]; then
   export SPACK_ROOT=${HOME}/.local/spack
   . ${SPACK_ROOT}/share/spack/setup-env.sh
 fi
+
+# Supercell
+if [[ -d /usr/local/share/supercell ]]; then
+  export BABEL_DATADIR=/usr/local/share/supercell
+fi
