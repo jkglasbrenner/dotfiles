@@ -1,6 +1,7 @@
 {
     "autoDocstring.docstringFormat": "sphinx",
     "breadcrumbs.enabled": true,
+    "C_Cpp.clang_format_fallbackStyle": "{Language: Cpp, BasedOnStyle: LLVM, AlignAfterOpenBracket: AlwaysBreak, AlignTrailingComments: true, AlwaysBreakAfterReturnType: None, CommentPragmas: '^pragma', ColumnLimit: 90, FixNamespaceComments: true, IncludeCategories: [{Regex: '^<.*\\.h>', Priority: 1}, {Regex: '^<.*', Priority: 2}, {Regex: '.*', Priority: 3}], IndentCaseLabels: true, IndentWidth: 2, ReflowComments: true, SpacesBeforeTrailingComments: 3, Standard: Cpp11, TabWidth: 2, UseTab: Never}",
     "C_Cpp.default.cppStandard": "c++14",
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
@@ -20,13 +21,30 @@
     "git.autofetch": true,
     "git.enableCommitSigning": true,
     "gitlens.codeLens.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
-    "gitProjectManager.baseProjectsFolders": ["~/Development", "~/Research", "~/Teaching", "~/Portfolio", "~/Notebooks"],
+    "gitProjectManager.baseProjectsFolders": [
+        "~/Development",
+        "~/Research",
+        "~/Teaching",
+        "~/Portfolio",
+        "~/Notebooks"
+    ],
     "html.format.wrapLineLength": 0,
     "numberedBookmarks.saveBookmarksInProject": true,
-    "python.formatting.blackArgs": ["-t", "py37"],
+    "python.formatting.blackArgs": [
+        "-t",
+        "py37"
+    ],
     "python.formatting.provider": "black",
-    "python.linting.flake8Args": ["--max-complexity=12", "--max-line-length=80", "--select=B,C,E,F,W,B9", "--ignore=E302,E501,W503"],
+    "python.jediEnabled": false,
+    "python.linting.flake8Args": [
+        "--max-complexity=12",
+        "--max-line-length=80",
+        "--select=B,C,E,F,W,B9",
+        "--ignore=E302,E501,W503"
+    ],
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": false,
     "python.linting.pydocstyleEnabled": true,
@@ -46,26 +64,49 @@
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Night Owl",
     "vim.insertModeKeyBindings": [{
-        "before": ["f", "d"],
-        "after": ["<Esc>"]
+        "before": [
+            "f",
+            "d"
+        ],
+        "after": [
+            "<Esc>"
+        ]
     }],
     "vim.normalModeKeyBindingsNonRecursive": [{
-            "before": ["<leader>", "d"],
-            "after": ["d", "d"]
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [
+                "d",
+                "d"
+            ]
         },
         {
-            "before": ["<C-n>"],
-            "commands": [":nohl"]
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
         },
         {
-            "before": ["leader", "w"],
+            "before": [
+                "leader",
+                "w"
+            ],
             "commands": [
                 "workbench.action.files.save",
             ]
         },
         {
-            "before": ["j"],
-            "after": ["g", "j"]
+            "before": [
+                "j"
+            ],
+            "after": [
+                "g",
+                "j"
+            ]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [{
@@ -86,16 +127,26 @@
         },
     ],
     "vim.leader": "<space>",
+    "[cpp]": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.wordWrapColumn": 90
+    },
     "[git-commit]": {
-        "editor.rulers": [67, 50],
+        "editor.rulers": [
+            67,
+            50
+        ],
         "editor.wordWrapColumn": 67,
         "editor.wordWrap": "off"
     },
     "[json]": {
         "editor.detectIndentation": false,
-        "editor.insertSpaces": true
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "HookyQR.beautify"
     },
-    "gitlens.codeLens.recentChange.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    "python.jediEnabled": false,
+    "[jsonc]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    }
 }
