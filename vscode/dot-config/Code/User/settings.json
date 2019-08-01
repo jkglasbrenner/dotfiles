@@ -54,6 +54,8 @@
     "revealjs.highlightTheme": "Default",
     "revealjs.theme": "white",
     "sync.gist": "844b98d2f96d87ce88dd609a4ee122de",
+    "sync.autoDownload": true,
+    "sync.autoUpload": true,
     "vim.easymotion": true,
     "vim.hlsearch": true,
     "vim.incsearch": true,
@@ -148,5 +150,6 @@
     },
     "[jsonc]": {
         "editor.defaultFormatter": "HookyQR.beautify"
-    }
+    },
+    "python.dataScience.sendSelectionToInteractiveWindow": true
 }
